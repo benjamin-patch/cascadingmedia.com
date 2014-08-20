@@ -1,0 +1,42 @@
+.r6ix-feature-container {
+  margin-bottom: 1.5rem;
+  @media #{$large-up} {
+    @include grid-column(4);
+    margin-bottom: 1rem;
+  }
+}
+.r6ix-feature-container:last-of-type {
+  margin-bottom: 0;
+  @media #{$large-up} {
+    margin-bottom: 1rem; 
+  }
+}
+
+.r6ix-feature {
+  background-color: $snow;
+  padding: 0 1rem;
+  text-align: center;
+  p {text-align: left;}
+  a:hover h3, a:focus h3 {
+    color: $ruby;
+    transition: color 300ms;
+  }
+  .button:hover, .button:focus {text-decoration: none;}
+  @media #{$large-up} {
+    border-radius: 0 0 $global-radius $global-radius;
+  }
+  img {
+    padding-top: 0.5rem;
+    @media #{$medium-up} {
+      width: 35rem;
+    }
+  }
+}
+
+.r6ix-plus {
+  @include grid-column(12);
+  text-align: center;
+  @media #{$medium-up} {
+    @include grid-column(4);
+  }
+}

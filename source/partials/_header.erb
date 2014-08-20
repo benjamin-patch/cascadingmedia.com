@@ -1,0 +1,119 @@
+<header class="metro">
+
+  <div class="container">
+
+    <section class="brand">
+      <a href="/">
+        <h1 id="site-name">Cascading Media</h1>
+      </a>
+
+      <a href="/">
+        <%= image_tag("cascading-media.svg", 
+        alt: "Cascading Media", 
+        id: "logo") %>
+      </a>
+    </section>
+
+    <nav class="wide">
+      <ul class="large-nav-bar">
+        <li>
+          <a class="<%= is_page_active('/services/') %>" href="/services/">
+            Services</a>
+        </li><li>
+          <a class="<%= is_page_active('/approach/') %>" href="/approach/">
+            Approach</a>
+        </li><li>
+          <a class="<%= is_page_active('/webfolio/') %>" href="/webfolio/">
+            Webfolio</a>
+        </li><li>
+          <a class="<%= is_page_active('/story/') %>" href="/story/">
+            Story</a>
+        </li><li>
+          <a href="#" 
+          data-dropdown="large-more-dropdown" 
+          data-options="is_hover:true" 
+          class="nav-button-dropdown">more</a><br>
+          <ul id="large-more-dropdown" data-dropdown-content class="f-dropdown">
+            <li>
+              <%= link_to "Technologies", "web-technologies.html" %>
+            </li><li>
+              <%= link_to "Contact", "contact.html" %>
+            </li><li>
+              <%= link_to "Home<br> (or press our logo)", "/" %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="tagline">
+      <h2>
+        Handcrafted Websites &amp; Applications<br>
+        Since 2008
+      </h2>
+    </section>
+
+  </div>
+
+  <nav class="mobile">
+
+    <ul class="small-nav-group">
+      <li>
+        <a class="<%= is_page_active('/services/') %>" href="/services/">
+            Services</a>
+      </li><li>
+        <a class="<%= is_page_active('/approach/') %>" href="/approach/">
+            Approach</a>
+      </li><li>
+        <a class="<%= is_page_active('/webfolio/') %>" href="/webfolio/">
+            Webfolio</a>
+      </li><li>
+        <a href="#" 
+        data-dropdown="small-more-dropdown" 
+        class="nav-button-dropdown">more</a><br>
+        <ul id="small-more-dropdown" data-dropdown-content class="f-dropdown">
+          <li>
+            <%= link_to "Story", "story.html" %>
+          </li><li>
+            <%= link_to "Technologies", "web-technologies.html" %>
+          </li><li>
+            <%= link_to "Contact", "contact.html" %>
+          </li><li>
+            <%= link_to "Home<br> (or press our logo)", "/" %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="medium-nav-bar">
+      <li>
+        <a class="<%= is_page_active('/services/') %>" href="/services/">
+            Services</a>
+      </li><li>
+        <a class="<%= is_page_active('/approach/') %>" href="/approach/">
+            Approach</a>
+      </li><li>
+        <a class="<%= is_page_active('/webfolio/') %>" href="/webfolio/">
+            Webfolio</a>
+      </li><li>
+        <a href="#" 
+          data-dropdown="medium-more-dropdown" 
+          class="nav-button-dropdown">
+          more</a><br>
+        <ul id="medium-more-dropdown" data-dropdown-content class="f-dropdown">
+          <li>
+            <%= link_to "Story", "story.html" %>
+          </li><li>
+            <%= link_to "Technologies", "web-technologies.html" %>
+          </li><li>
+            <%= link_to "Contact", "contact.html" %>
+          </li><li>
+            <%= link_to "Home<br> (or press our logo)", "/" %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </nav>
+
+</header>

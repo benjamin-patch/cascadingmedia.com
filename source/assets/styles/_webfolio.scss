@@ -1,0 +1,42 @@
+// Webfolio
+
+.webfolio-project-container {
+  margin-bottom: 1.5rem;
+  @media #{$medium-up} {
+    @include grid-column(6);
+    margin-bottom: 1rem;
+  }
+}
+.ie8 .webfolio-project-container {margin-bottom: 1.5em;}
+
+.webfolio-project {
+  max-width: 100%;
+  background-color: $deep-gray;
+  color: $light-gray;
+  padding: 0.5rem 1rem;
+  @media #{$medium-up} {
+    float: left;
+    border-radius: $global-radius;
+  }
+}
+.ie8 .webfolio-project {
+  padding: 0.5em 1em;
+}
+
+section.webfolio-project h1, section.webfolio-project h2, 
+section.webfolio-project h3, section.webfolio-project h4, 
+section.webfolio-project h5, section.webfolio-project h6 {
+  color: $light-gray;
+}
+
+// Webfolio Images
+
+a:hover .webfolio-preview-image, a:focus .webfolio-preview-image {
+  border: 3px solid $ruby;
+  transition: border 300ms ease-out;
+}
+// required for IE9+ and Firefox
+.clearing-featured-img {
+  max-width: 100%;
+  height: auto;
+}

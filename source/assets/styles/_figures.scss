@@ -1,0 +1,84 @@
+figure {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border: 2px solid;
+  border-radius: $global-radius;
+  position: relative;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  figcaption {
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 0 0.1rem;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    }
+}
+
+section#origins figure {
+  @media #{$medium-up} {
+    float: right;
+    width: 75%;
+  }
+  @media #{$medium-only} {
+    margin-left: 0.8rem; 
+  }
+  @media #{$large-up} {
+    margin-left: 1rem;
+  }
+}
+
+section#tech {
+  figure {
+    @media #{$medium-up} {
+      width: 48%;
+      float: left;
+      margin-left: 1rem;
+    }
+  }
+  figure:first-of-type {
+    @media #{$medium-up} {margin-left: 0;}
+  }
+}
+
+section#creative, section#personal-touch {
+  figure {
+    @media #{$medium-up} {
+      width: 31%;
+      float: left;
+      margin-left: 1rem;
+    }
+  }
+  figure:first-of-type {
+    @media #{$medium-up} {margin-left: 0;}
+  }
+}
+
+section#trusted-specialists {
+  .copy-container {
+    @media #{$large-up} {
+      width: 40%;
+      float: left;
+    }
+  }
+  figure {
+    img {width: 100%;}
+    @media #{$medium-only} {
+      width: 66%;
+      margin: 1rem auto;
+    }
+    @media #{$large-up} {
+      width: 50%;
+      float: left;
+      margin: 1rem 0 1rem 4rem;
+    }
+  }
+}
+.no-svg #network-of-specialists, .ie8 #network-of-specialists {
+  display: block;
+  width: 487px;
+  height: 487px;
+  background-image: url(/assets/images/r6ix/network-of-specialists.png);
+}

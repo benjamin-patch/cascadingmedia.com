@@ -1,0 +1,96 @@
+// visibility
+.ie8 .hide-ie8 {
+  display: none !important;
+}
+
+.ie8 .hide-for-small-only {
+  display: block !important;
+}
+
+// metro
+.ie8 .ruby, .ie8 .white {
+  padding: 0 1em;
+}
+
+// containers
+.ie8 .narrow-container {
+  max-width: 40em;
+}
+.ie8 .row, .ie8 .container { 
+  max-width: 60em;
+}
+.ie8 .wide-container { 
+  max-width: 80em;
+}
+
+// r6ix
+.ie8 .r6ix-feature-container {
+  @include grid-column(4);
+  padding: 0 1em 0 1em;
+  margin-bottom: 1.5em;
+}
+.ie8 .r6ix-feature {
+  padding: 0 1em;
+}
+.ie8 .r6ix-plus {
+  @include grid-column(4);
+  padding: 0 1.5em;
+}
+
+.ie8 .columns, .ie8 .primary, .ie8 .supplemental {
+  padding: 0.5em 1em;
+}
+
+// navigation
+.ie8 .small-nav-group {
+  margin: 0 auto;
+  max-width: 40em;
+  li {
+    width: 33.33%;
+    padding: 0 1em;
+  }
+  a {
+    padding: 0.5em 0;
+  }
+  a.nav-button-dropdown {display: none;}
+}
+
+.ie8 .footer-links li {
+  padding: 0.6em;
+}
+
+// buttons
+.ie8 .button {
+  margin: 0 0 1.25em;
+  padding: 0.5em 1em;
+}
+.ie8 .ruby .button {
+  background: #f6d3d0;
+}
+.ie8 .ruby .button:focus, .ie8 .ruby .button:hover {
+  background: #fff2f1;
+}
+
+.ie8 .wide-nav-button {
+  margin: 0 1.25em 1.25em 0;
+  padding: 0.5em;
+}
+
+.ie8 .wide-nav {
+  width: 65.6em;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+// forms
+.ie8 .ruby input {
+  color: $deep-gray;
+}
+
+// typography
+.ie8 h1, .ie8 h2, .ie8 h3 {margin: 0.2em 0 0.5em 0;}
+
+.ie8 p {margin-bottom: 1.25em;}
+
+// blockquotes
+.ie8 blockquote {padding: 0.5625em 1.25em 0 1.1875em;}

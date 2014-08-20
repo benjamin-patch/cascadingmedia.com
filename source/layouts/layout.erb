@@ -1,0 +1,25 @@
+<!doctype html>
+<!--[if lte IE 8 ]> <html class="ie8"> <![endif]-->
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= page_title %></title>
+  <meta name="description" content="<%= meta_description %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag "cascading-media" %>
+  <%= stylesheet_link_tag "//fast.fonts.net/cssapi/9b3d9e2f-ed16-4af2-bf26-a4f25eae4fc9.css" %>
+  <%= javascript_include_tag "vendor/modernizr-2.8.3.min" %>
+</head>
+
+<body>
+<%= partial "browse-happy" %>
+<%= partial "header" %>
+<article>
+<%= yield %>
+</article>
+<%= partial "footer" %>
+
+<%= partial "scripts" %>
+</body>
+</html>

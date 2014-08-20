@@ -1,0 +1,25 @@
+footer a:hover, footer a:focus {
+  text-decoration: underline;
+}
+
+.site-map {
+  @include grid-column(12);
+  padding-bottom: 0;
+  @media #{$large-up} {
+    @include grid-column($columns: 12, $last-column: true, $center: true);  
+  }
+}
+
+.footer-links {
+  @include block-grid(2);
+  @media #{$medium-only} {
+    @include block-grid(4);
+  }
+  @media #{$large-up} {
+    @include block-grid(7);
+  }
+}
+
+.copyright, .crafter {
+  @include grid-column(12);
+}

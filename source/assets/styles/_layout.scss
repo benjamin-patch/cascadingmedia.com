@@ -1,0 +1,146 @@
+.metro {
+  position: relative;
+  width: 100%;
+  padding: 1rem;  
+  color: $snow;
+  text-align: center;
+  background: $deep-gray;
+}
+
+.metro h1, .metro h2, .metro h3, .metro h4, .metro h5, .metro h6, 
+.metro a, .metro a:hover, .metro a:focus {
+  color: $snow;
+}
+
+.container {
+  @include grid-row;
+}
+.narrow-container {
+  @include grid-row;
+  max-width: 50rem;
+}
+
+.brand {
+  @include grid-column(12);
+  @media #{$large-up} {
+    @include grid-column(4);
+  }
+}
+
+nav.wide {
+  display: none;
+  @media #{$large-up} {
+    display: block;
+    @include grid-column(8);
+  }
+}
+
+.tagline {
+  @include grid-column(12);
+  @media #{$small-only} {
+    display: none;
+  }
+  @media #{$medium-up} {
+    display: block;
+  }
+  @media #{$large-up} {
+    @include grid-column(8);
+  }
+}
+
+.light-gray {
+  background-color: $light-gray;
+  .button {
+    @include button($radius: true);
+    transition: background-color 300ms ease-out;
+  }
+  .button:hover, .button:focus {
+    background-color: $bright-ruby;
+  }
+}
+
+.wide-container {
+  @include grid-row;
+  max-width: 100rem;
+}
+
+.page-title {
+  @include grid-row();
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+.service-title {
+  text-align: center;
+  @media #{$medium-up} {
+    text-align: left;
+  }
+}
+
+section.ruby, section.white {
+  padding: 0 1rem;
+  a:hover, a:focus {text-decoration: underline;}
+  .button:hover, .button:focus {text-decoration: none;}
+  ul {list-style-position: inside;}
+}
+
+section.ruby {
+  color: $snow;
+  background: $light-ruby;
+  a {color: $deep-gray;}
+  .service-visual {
+    @media #{$large-up} {
+      float: right;
+      padding: 1rem 0 1rem 2rem;
+    }
+  }
+  figure {
+    border-color: $snow;
+    figcaption {
+      background: $snow;
+      color: $deep-gray;
+    }
+  }
+  .button {
+    @include button($bg: rgba(255,255,255,0.70), $radius: true);
+    transition: background-color 300ms ease-out;
+  }
+  .button:hover, .button:focus {
+    background-color: rgba(255,255,255,0.85);
+  }
+  label {color: $snow;}
+}
+section.ruby h1, section.ruby h2, section.ruby h3, section.ruby h4, section.ruby 
+h5, section.ruby h6 {
+  color: $snow;
+}
+
+section.white {
+  background-color: $snow;
+  .service-visual {
+    @media #{$large-up} {
+      float: left;
+      padding: 1rem 2rem 1rem 0;
+    }
+  }
+  figure {
+    border-color: $deep-gray;
+    figcaption {
+      background: $deep-gray;
+      color: $snow;
+    }
+  }
+  .button {
+    @include button($radius: true);
+    transition: background-color 300ms ease-out;
+  }
+  .button:hover, .button:focus {
+    background-color: $bright-ruby;
+  }
+}
+
+#terminology .copy-container {
+  @media #{$medium-up} {
+    @include grid-column(6);
+  }
+}

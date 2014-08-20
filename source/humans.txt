@@ -1,0 +1,12 @@
+# humanstxt.org
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Benjamin Patch -- Lead Web Developer -- @BenjaminPatch
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
+    h5bp, Foundation, Middleman

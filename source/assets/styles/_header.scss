@@ -1,0 +1,89 @@
+// Branding
+.svg #site-name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.svg #logo {
+  width: 25rem;
+  margin-top: -0.7rem;
+  padding: 0 1rem 0.5rem 1rem;
+}
+.no-svg #logo, .ie8 #logo {
+  display: none;
+}
+
+.tagline h1, .tagline h2, .tagline h3, .tagline h4, .tagline h5, .tagline h6 {
+  font-weight: 300;
+}
+
+// Navigation Buttons
+
+.nav-button {
+  @include button($bg: $ruby, $radius: true, $full-width: true);
+  transition: background-color 300ms ease-out;
+}
+a:hover.nav-button, a:focus.nav-button {
+  background-color: $bright-ruby;
+} 
+.nav-button-dropdown {
+  @extend .nav-button;
+  @include dropdown-button();
+}
+a.current-location {
+  @include button($bg: $ruby, $radius: true, $full-width: true, $disabled: true);
+}
+
+// Small Navigation Layout
+
+.small-nav-group {
+  @include block-grid(2);
+  @media #{$medium-up} {
+    display: none;
+  }
+}
+.small-nav-group li {
+  padding-bottom: 0;
+}
+
+// Medium & Large Navigation Bars
+
+.nav-bar {
+  display: none;
+  @include button-group-container();
+  .nav-button, .current-location {border-left: 1px #fff solid;}
+  & > li:first-child > a {border-left: 0;}
+}
+.medium-nav-bar {
+  @extend .nav-bar;
+  @media #{$medium-only} {
+    display: block;
+    & > li { @include button-group-style($radius: true, $even: 4); }
+  }
+}
+.large-nav-bar {
+  @extend .nav-bar;
+  @media #{$large-up} {
+    display: block;
+    & > li { @include button-group-style($radius: true, $even: 5); }
+  }
+}
+
+// Dropdown (all display sizes)
+
+#medium-more-dropdown li, #large-more-dropdown li {
+  width: 100%;
+}
+#small-more-dropdown a:hover, #small-more-dropdown a:focus, 
+#medium-more-dropdown a:hover, #medium-more-dropdown a:focus, 
+#large-more-dropdown a:hover, #large-more-dropdown a:focus {
+  color: $ruby;
+  transition: color 200ms ease-in;
+}
+#small-more-dropdown li:hover, #small-more-dropdown li:focus, 
+#medium-more-dropdown li:hover, #medium-more-dropdown li:focus, 
+#large-more-dropdown li:hover, #large-more-dropdown li:focus {
+  background-color: $light-gray;
+  transition: background-color 200ms ease-in;
+}

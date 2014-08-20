@@ -1,0 +1,111 @@
+// r6ix visuals
+.no-svg #responsive-web-design, .ie8 #responsive-web-design {
+  display: none;
+}
+.no-svg #professional-practices, .ie8 #professional-practices {
+  display: none;
+}
+.no-svg #leading-edge, .ie8 #leading-edge {
+  display: none;
+}
+
+// service visuals
+.service-visual {
+  width: 100%;
+  margin: 0.5rem auto;
+  @media #{$medium-up} {
+    width: 35rem;
+    display: block;
+  }
+}
+
+.no-svg img#handcrafted-websites, .ie8 img#handcrafted-websites {
+  display: block;
+  margin: 1em auto;
+  width: 480px;
+  height: 334px;
+  background-image: url(/assets/images/services/responsive-web-design.png);
+}
+.no-svg img#web-apps, .ie8 img#web-apps {
+  display: block;
+  margin: 1em auto;
+  width: 513px;
+  height: 300px;
+  background-image: url(/assets/images/services/web-application-development.png);
+}
+.no-svg img#cascading-cloud, .ie8 img#cascading-cloud {
+  display: block;
+  margin: 1em auto;
+  width: 469px;
+  height: 352px;
+  background-image: url(/assets/images/services/cascading-cloud.png);
+}
+.no-svg img#email-newsletters, .ie8 img#email-newsletters {
+  display: block;
+  margin: 1em auto;
+  width: 513px;
+  height: 292px;
+  background-image: url(/assets/images/services/responsive-email-newsletters.png);
+}
+
+// approach icons
+.approach-icon {
+  width: 12.5rem;
+  display: block;
+  margin: 1rem auto;
+}
+.no-svg .approach-icon, .ie8 .approach-icon {
+  display: none;
+}
+
+#improve {
+  @media #{$large-up} {
+    .container {
+      width: 75%;
+    }
+    .approach-icon {
+      float: left;
+      margin-right: 2rem;
+      width: 16rem;
+    }
+  }
+}
+
+// visuals for web technologies
+#html5 img, #ruby img, #retina img, #typography img {
+  width: 55%;
+  margin: 1rem auto;
+  display: block;
+}
+.no-svg #html5 img, .no-svg #ruby img, .no-svg #retina img, .no-svg #typography img {
+  display: none;
+}
+.ie8 #html5 img, .ie8 #ruby img, .ie8 #retina img, .ie8 #typography img {
+  display: none;
+}
+
+#html5 img, #retina img {
+  @media #{$medium-up} {
+  float: left;
+  width: 25%;
+  }
+  @media #{$medium-only} {
+    margin: 1rem 1rem 1rem 0;
+  }
+  @media #{$large-up} {
+    margin: 1rem 2rem 1rem 0;
+  }
+}
+
+#ruby img, #typography img {
+  @media #{$medium-up} {
+    float: right;
+    width: 25%;
+  }
+  @media #{$medium-only} {
+    margin: 1rem 0 1rem 1rem;
+  }
+  @media #{$large-up} {
+    margin: 1rem 0 1rem 2rem;
+  }
+}

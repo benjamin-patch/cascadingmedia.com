@@ -1,0 +1,20 @@
+.browse-happy {
+  background: $alert-color;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em 1em;
+  margin: 0;
+}
+
+.ie8 .browse-happy {
+  margin-bottom: 0;
+}
+
+.browse-happy a, .browse-happy a:visited {
+    text-decoration: none;
+    color: yellow;
+}
+
+.browse-happy a:focus,  .browse-happy a:hover {
+  text-decoration: underline;
+}
