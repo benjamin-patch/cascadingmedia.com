@@ -4,7 +4,6 @@
   - Name: r6ix
 
 ## Tasks
-  - Google Analytics
   - 301 redirects from 5.x
  
 ## Development Tools
