@@ -4,8 +4,6 @@
   - Name: r6ix
 
 ## Tasks
-  - Git repo
-  - Google Analytics
   - 301 redirects from 5.x
  
 ## Development Tools
