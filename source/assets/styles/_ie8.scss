@@ -31,6 +31,7 @@
 }
 .ie8 .r6ix-feature {
   padding: 0 1em;
+  img {width: 160px;}
 }
 .ie8 .r6ix-plus {
   @include grid-column(4);

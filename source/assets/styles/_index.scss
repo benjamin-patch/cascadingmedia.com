@@ -27,6 +27,7 @@
   }
   img {
     padding-top: 0.5rem;
+    width: 100%;
     @media #{$medium-up} {
       width: 35rem;
     }
