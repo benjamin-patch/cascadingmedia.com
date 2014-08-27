@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="200" height="200" viewBox="0, 0, 200, 200">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0, 0, 200, 200">
   <g id="thumbs-up">
     <path d="M66.812,172.819 C66.812,172.819 47.503,172.819 47.503,172.819 C21.509,172.819 0.437,151.769 0.437,125.803 C0.437,99.837 21.509,78.787 47.503,78.787 C47.503,78.787 66.812,78.787 66.812,78.787 C66.812,78.787 66.812,172.819 66.812,172.819 z" fill="#393939"/>
     <path d="M61.281,73.256 C61.281,73.256 94.469,73.256 94.469,73.256 C94.469,73.256 94.469,178.35 94.469,178.35 C94.469,178.35 61.281,178.35 61.281,178.35 C61.281,178.35 61.281,73.256 61.281,73.256 z" fill="#E4695D"/>
