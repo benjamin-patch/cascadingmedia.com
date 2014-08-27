@@ -95,7 +95,7 @@ configure :build do
   activate :minify_javascript
 
   # Minify HTML on build
-  activate :minify_html
+  activate :minify_html, remove_input_attributes: false
 
   # Enable gzip
   activate :gzip
