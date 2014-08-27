@@ -7,6 +7,9 @@
   - **6.0.1** -- 24 August 2014
   - **6.0.0** -- 20 August 2014
 
+## 6.0.2-wip Release Notes
+  - iOS 5 SVG bug corrected without breaking support for IE8+.
+
 ## 6.0.1 Release Notes
   - Presentation of contact and newsletter forms corrected.
   - Minor content updates.
