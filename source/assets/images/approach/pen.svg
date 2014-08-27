@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="200" height="200" viewBox="0, 0, 200, 200">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0, 0, 200, 200">
   <g id="pen">
     <g id="pen">
       <path d="M169.7,9.484 C165.736,13.424 166.162,20.273 170.628,24.704 L175.333,29.421 C179.8,33.887 186.642,34.284 190.571,30.308 L194.739,26.14 C198.691,22.187 198.265,15.363 193.793,10.914 L189.076,6.197 C184.593,1.737 177.791,1.381 173.839,5.321 L169.7,9.484" fill="#223A42"/>
