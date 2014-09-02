@@ -67,6 +67,11 @@ helpers do
     current_page.url == page ? 'current-location' : 'nav-button'
   end
 
+  def current_month_year
+    t = Time.now
+    t.strftime("%B %Y")
+  end
+
 end
 
 set :css_dir, 'assets/styles'
