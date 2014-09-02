@@ -12,6 +12,7 @@
 
 ### 6.0.3-wip
   - Future updates to current month and year will no longer require source code alterations.
+  - Our custom styles, including Foundation, are now pulled into HTML5 Boilerplate via Sass. No styling should be altered by this change.
 
 ### 6.0.2
   - iOS 5 SVG bug corrected without breaking support for IE8+.
