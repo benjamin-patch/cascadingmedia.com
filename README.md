@@ -10,6 +10,9 @@
 
 ## Release Notes
 
+### 6.0.3-wip
+  - Future updates to current month and year will no longer require source code alterations.
+
 ### 6.0.2
   - iOS 5 SVG bug corrected without breaking support for IE8+.
   - Type attributes are now included for text input fields.
