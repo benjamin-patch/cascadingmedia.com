@@ -1,16 +1,17 @@
 # Cascading Media
-  - Release: 6.0.2
-  - Date: 27 August 2014
+  - Release: 6.0.3
+  - Date: 02 September 2014
   - Name: r6ix
 
 ## Release Dates
+  - **6.0.3** => 02 September 2014
   - **6.0.2** => 27 August 2014
   - **6.0.1** => 24 August 2014
   - **6.0.0** => 20 August 2014
 
 ## Release Notes
 
-### 6.0.3-wip
+### 6.0.3
   - Future updates to current month and year will no longer require source code alterations.
   - Our custom styles, including Foundation, are now pulled into HTML5 Boilerplate via Sass. No styling should be altered by this change.
 
