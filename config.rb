@@ -114,3 +114,9 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+activate :blog do |blog|
+  blog.prefix = "blog"
+  blog.sources = "blog/{year}/{month}/{title}.html.erb"
+  blog.permalink = "{year}/{month}/{title}"
+end
