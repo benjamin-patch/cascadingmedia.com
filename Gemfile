@@ -14,3 +14,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 gem 'builder'
 
 gem 'middleman-minify-html', '~> 3.4'
+
+gem 'middleman-blog'

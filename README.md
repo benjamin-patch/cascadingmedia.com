@@ -1,9 +1,10 @@
 # Cascading Media
-  - Release: 6.1.0
-  - Date: 16 November 2014
+  - Release: 6.2.0
+  - Date: 16 December 2014
   - Name: r6ix
 
 ## Release Dates
+  - **6.2.0** => 16 December 2014
   - **6.1.0** => 16 November 2014
   - **6.0.3** => 02 September 2014
   - **6.0.2** => 27 August 2014
@@ -11,6 +12,9 @@
   - **6.0.0** => 20 August 2014
 
 ## Release Notes
+
+### 6.2.0
+  - Blog created.
 
 ### 6.1.0
   - Update base site URL to HTTPS protocol.
