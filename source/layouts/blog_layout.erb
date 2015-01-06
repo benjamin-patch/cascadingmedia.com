@@ -1,0 +1,17 @@
+<% wrap_layout :layout do %>
+
+<header id="blog" class="light-gray">
+  <div class="page-title">
+    <h1><%= current_page.data.title %></h1>
+    <h3 class="subheader">Written by <%= current_page.data.author %><br>
+    <%= current_page.data.date %></h3>
+  </div>
+</header>
+
+<section class="white">
+  <div class="narrow-container">
+    <%= yield %>
+  </div>  
+</section>
+
+<% end %>
