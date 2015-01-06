@@ -25,6 +25,7 @@
 # end
 
 page "/sitemap.xml", :layout => false
+page "/blog/feed.xml", :layout => false
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
@@ -117,6 +118,5 @@ end
 
 activate :blog do |blog|
   blog.prefix = "blog"
-  blog.sources = "blog/{year}/{month}/{title}.html.erb"
   blog.permalink = "{year}/{month}/{title}"
 end
