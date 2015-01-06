@@ -24,8 +24,11 @@
 #   page "/admin/*"
 # end
 
+# no layout
 page "/sitemap.xml", :layout => false
 page "/blog/feed.xml", :layout => false
+
+page "insites.html", :layout => :narrow_layout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {

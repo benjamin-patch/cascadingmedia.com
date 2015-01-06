@@ -1,0 +1,17 @@
+---
+title: inSites
+description: Cascading Media's blog.
+---
+
+<% blog.articles.each do |article| %>
+  <article>
+    <h1>
+      <a href="<%= article.url %>"><%= article.title %></a>
+      <time><%= article.date.strftime('%b %e %Y') %></time>
+    </h1>
+
+    <%= article.summary %>
+
+    <%= link_to("Read Full Article", article.url, class: "button") %>
+  </article>
+<% end %>
