@@ -59,6 +59,10 @@ helpers do
     end
   end
 
+  def subtitle
+    current_page.data.subtitle
+  end
+
   def meta_description
     if current_page.data.description.present?
       current_page.data.description
