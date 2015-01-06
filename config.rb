@@ -73,6 +73,10 @@ helpers do
     t.strftime("%B %Y")
   end
 
+  def article_date
+    article_date = current_page.data.date
+    article_date.strftime("%B %e, %Y")
+  end
 end
 
 set :css_dir, 'assets/styles'
