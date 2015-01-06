@@ -5,7 +5,7 @@ description: Cascading Media's blog.
 ---
 
 <% blog.articles.each do |article| %>
-  <section>
+  <section class="insite-snippet">
     <h1>
       <a href="<%= article.url %>"><%= article.title %></a>
     </h1>
@@ -17,5 +17,4 @@ description: Cascading Media's blog.
 
     <%= link_to("Read Full Article", article.url, class: "button") %>
   </section>
-  <hr>
 <% end %>

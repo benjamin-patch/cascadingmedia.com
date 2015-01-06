@@ -1,0 +1,6 @@
+.insite-snippet {
+  border-bottom: 3px solid $tertiary-color;
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
