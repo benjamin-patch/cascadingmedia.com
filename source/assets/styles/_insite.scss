@@ -1,4 +1,8 @@
 .insite-snippet {
+  text-align: center;
+  article {
+    text-align: left;
+  }
   border-bottom: 3px solid $tertiary-color;
   &:last-of-type {
     border-bottom: none;
