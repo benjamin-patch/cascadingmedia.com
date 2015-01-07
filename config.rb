@@ -26,7 +26,7 @@
 
 # no layout
 page "/sitemap.xml", :layout => false
-page "/blog/feed.xml", :layout => false
+page "/insites/feed.xml", :layout => false
 
 page "insites.html", :layout => :insite_layout
 
@@ -128,7 +128,7 @@ configure :build do
 end
 
 activate :blog do |blog|
-  blog.prefix = "blog"
+  blog.prefix = "insites"
   blog.permalink = "{year}/{month}/{title}"
   blog.layout = "blog_layout"
 
