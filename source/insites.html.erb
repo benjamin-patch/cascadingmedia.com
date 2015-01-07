@@ -1,6 +1,6 @@
 ---
-title: inSites
-subtitle: Promoting a better understanding of the web.
+title: InSites
+subtitle: Promoting greater comprehension of the web.
 description: Cascading Media's blog.
 ---
 
@@ -16,11 +16,11 @@ description: Cascading Media's blog.
     </header>
 
     <article>
-      <%= article.summary %>
+      <p><%= article.data.insite_summary %></p>
     </article>
 
     <footer>
-      <%= link_to("Read Full Article", article.url, class: "button") %>
+      <%= link_to("Read #{article.title}", article.url, class: "button") %>
     </footer>
   </section>
 <% end %>
