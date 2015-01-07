@@ -1,8 +1,8 @@
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
   site_url = "https://cascadingmedia.com/blog"
-  xml.title "Cascading Media Insites"
-  xml.subtitle "Blog subtitle"
+  xml.title "Cascading Media InSites"
+  xml.subtitle "Promoting greater comprehension of the web."
   xml.id URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, current_page.path), "rel" => "self"
@@ -16,8 +16,8 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.id URI.join(site_url, article.url)
       xml.published article.date.to_time.iso8601
       xml.updated File.mtime(article.source_file).iso8601
-      xml.author { xml.name "Benjamin Patch" }
-      # xml.summary article.summary, "type" => "html"
+      xml.author { xml.name "#{article.data.author}" }
+      xml.summary article.data.insite_summary
       xml.content article.body, "type" => "html"
     end
   end
