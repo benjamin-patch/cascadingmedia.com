@@ -1,6 +1,6 @@
 <% wrap_layout :layout do %>
 
-<header id="blog" class="light-gray">
+<header class="light-gray">
   <div class="page-title">
     <h1><%= current_page.data.title %></h1>
     <h3 class="subheader">Written by <%= current_page.data.author %><br>
@@ -11,6 +11,7 @@
 <section class="white">
   <div class="narrow-container">
     <%= yield %>
+    <%= link_to("&#8592; Additional Articles", "/insites.html", class: "button") %>
   </div>  
 </section>
 
