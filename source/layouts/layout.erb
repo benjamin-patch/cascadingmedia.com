@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><%= page_title %></title>
   <meta name="description" content="<%= meta_description %>">
+  <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Cascading Media InSites" %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag "cascading-media" %>
   <%= stylesheet_link_tag "//fast.fonts.net/cssapi/9b3d9e2f-ed16-4af2-bf26-a4f25eae4fc9.css" %>

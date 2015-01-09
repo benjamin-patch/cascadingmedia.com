@@ -1,3 +1,14 @@
 blockquote, blockquote p {
   font-size: $paragraph-font-size;
 }
+
+pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: $light-gray;
+  border-radius: $global-radius;
+}
+
+code {
+  font-weight: normal;
+}

@@ -96,8 +96,9 @@ section.ruby {
   }
   figure {
     border-color: $snow;
+    
     figcaption {
-      background: $snow;
+      background: $light-gray;
       color: $deep-gray;
     }
   }
@@ -126,7 +127,7 @@ section.white {
   figure {
     border-color: $deep-gray;
     figcaption {
-      background: $deep-gray;
+      background: $medium-gray;
       color: $snow;
     }
   }

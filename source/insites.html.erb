@@ -1,0 +1,26 @@
+---
+title: InSites
+subtitle: Promoting greater comprehension of the web.
+description: Cascading Media's blog.
+---
+
+<% blog.articles.each do |article| %>
+  <section class="insite-snippet">
+    <header>
+      <h1>
+        <a href="<%= article.url %>"><%= article.title %></a>
+      </h1>
+      <h3>
+        <time><%= article.date.strftime('%b %e %Y') %></time>
+      </h3>
+    </header>
+
+    <article>
+      <p><%= article.data.insite_summary %></p>
+    </article>
+
+    <footer>
+      <%= link_to("Read #{article.title}", article.url, class: "button") %>
+    </footer>
+  </section>
+<% end %>

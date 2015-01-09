@@ -1,0 +1,28 @@
+<% wrap_layout :layout do %>
+
+<header class="light-gray">
+  <div class="page-title">
+    <h1><%= current_page.data.title %></h1>
+    <h3 class="subheader"><%= subtitle %></h3>
+  </div>
+</header>
+
+<section class="white">
+  <div class="narrow-container">
+    <%= yield %>
+  </div>  
+</section>
+
+<footer class="light-gray">
+  <div class="page-title">
+    <h2>Update Notifications</h2>
+    <p>We can let you know when new articles are published.<br> 
+    Just sign up for our email newsletter or subcribe to the Atom feed.</p>
+    <%= link_to("Email Updates", "http://eepurl.com/xEPBD", target: "_blank", class: "button") %>
+    <%= link_to("Atom Feed <sup>*</sup>", "#{blog.options.prefix.to_s}/feed.xml", class: "button") %>
+    <p><sup>*</sup> To use any Atom feed, you will need an Atom/RSS reader.<br> 
+    Firefox and Safari handle this natively, other browsers require an Atom/RSS extension.</p>
+  </div>
+</footer>
+
+<% end %>

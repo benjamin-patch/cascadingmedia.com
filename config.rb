@@ -24,7 +24,11 @@
 #   page "/admin/*"
 # end
 
+# no layout
 page "/sitemap.xml", :layout => false
+page "/insites/feed.xml", :layout => false
+
+page "insites.html", :layout => :insite_layout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
@@ -55,6 +59,10 @@ helpers do
     end
   end
 
+  def subtitle
+    current_page.data.subtitle
+  end
+
   def meta_description
     if current_page.data.description.present?
       current_page.data.description
@@ -72,6 +80,10 @@ helpers do
     t.strftime("%B %Y")
   end
 
+  def article_date
+    article_date = current_page.data.date
+    article_date.strftime("%B %e, %Y")
+  end
 end
 
 set :css_dir, 'assets/styles'
@@ -116,7 +128,26 @@ configure :build do
 end
 
 activate :blog do |blog|
-  blog.prefix = "blog"
-  blog.sources = "blog/{year}/{month}/{title}.html.erb"
+  blog.prefix = "insites"
   blog.permalink = "{year}/{month}/{title}"
+  blog.layout = "article_layout"
+
+  # Matcher for blog source files
+  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  # blog.taglink = "tags/{tag}.html"
+
+  # blog.summary_separator = /(READMORE)/
+  # blog.summary_length = 250
+  # blog.year_link = "{year}.html"
+  # blog.month_link = "{year}/{month}.html"
+  # blog.day_link = "{year}/{month}/{day}.html"
+  # blog.default_extension = ".markdown"
+
+  # blog.tag_template = "tag.html"
+  # blog.calendar_template = "calendar.html"
+
+  # Enable pagination
+  # blog.paginate = true
+  # blog.per_page = 10
+  # blog.page_link = "page/{num}"
 end
