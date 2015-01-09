@@ -19,7 +19,7 @@
     <p>We can let you know when new articles are published.<br> 
     Just sign up for our email newsletter or subcribe to the Atom feed.</p>
     <%= link_to("Email Updates", "http://eepurl.com/xEPBD", target: "_blank", class: "button") %>
-    <%= link_to("Atom Feed <sup>*</sup>", "/insites/feed.xml", class: "button") %>
+    <%= link_to("Atom Feed <sup>*</sup>", "#{blog.options.prefix.to_s}/feed.xml", class: "button") %>
     <p><sup>*</sup> To use any Atom feed, you will need an Atom/RSS reader.<br> 
     Firefox and Safari handle this natively, other browsers require an Atom/RSS extension.</p>
   </div>
