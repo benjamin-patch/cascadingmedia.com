@@ -130,7 +130,7 @@ end
 activate :blog do |blog|
   blog.prefix = "insites"
   blog.permalink = "{year}/{month}/{title}"
-  blog.layout = "blog_layout"
+  blog.layout = "article_layout"
 
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
