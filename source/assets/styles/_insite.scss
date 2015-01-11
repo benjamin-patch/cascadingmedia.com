@@ -17,3 +17,12 @@
     color: $snow;
   }
 }
+
+section.white .insite-button {
+  @include button($bg: $ruby, $radius: true);
+  transition: background-color 300ms ease-out;
+  &:hover, &:focus {
+    background-color: $bright-ruby;
+    text-decoration: none;
+  }
+}

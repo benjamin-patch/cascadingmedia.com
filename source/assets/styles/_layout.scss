@@ -51,11 +51,11 @@ nav.wide {
 .light-gray {
   background-color: $light-gray;
   .button {
-    @include button($radius: true);
+    @include button($bg: $deep-gray, $radius: true);
     transition: background-color 300ms ease-out;
   }
   .button:hover, .button:focus {
-    background-color: $bright-ruby;
+    background-color: $medium-gray;
   }
 }
 
@@ -132,11 +132,11 @@ section.white {
     }
   }
   .button {
-    @include button($radius: true);
+    @include button($bg: $deep-gray, $radius: true);
     transition: background-color 300ms ease-out;
   }
   .button:hover, .button:focus {
-    background-color: $bright-ruby;
+    background-color: $medium-gray;
   }
 }
 
