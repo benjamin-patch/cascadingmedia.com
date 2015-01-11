@@ -1,3 +1,7 @@
+set :url_root, 'https://cascadingmedia.com'
+
+activate :search_engine_sitemap
+
 ###
 # Compass
 ###
