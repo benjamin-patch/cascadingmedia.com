@@ -51,11 +51,11 @@ nav.wide {
 .light-gray {
   background-color: $light-gray;
   .button {
-    @include button($radius: true);
+    @include button($bg: $deep-gray, $radius: true);
     transition: background-color 300ms ease-out;
   }
   .button:hover, .button:focus {
-    background-color: $bright-ruby;
+    background-color: $medium-gray;
   }
 }
 
@@ -96,8 +96,9 @@ section.ruby {
   }
   figure {
     border-color: $snow;
+    
     figcaption {
-      background: $snow;
+      background: $light-gray;
       color: $deep-gray;
     }
   }
@@ -126,16 +127,16 @@ section.white {
   figure {
     border-color: $deep-gray;
     figcaption {
-      background: $deep-gray;
+      background: $medium-gray;
       color: $snow;
     }
   }
   .button {
-    @include button($radius: true);
+    @include button($bg: $deep-gray, $radius: true);
     transition: background-color 300ms ease-out;
   }
   .button:hover, .button:focus {
-    background-color: $bright-ruby;
+    background-color: $medium-gray;
   }
 }
 

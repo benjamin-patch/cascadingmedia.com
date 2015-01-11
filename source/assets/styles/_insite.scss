@@ -1,0 +1,28 @@
+.insite-snippet {
+  text-align: center;
+  time {
+    color: $medium-gray;
+  }
+  article {
+    text-align: left;
+  }
+  border-bottom: 3px solid $tertiary-color;
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.ruby .insite-snippet {
+  time {
+    color: $snow;
+  }
+}
+
+section.white .insite-button {
+  @include button($bg: $ruby, $radius: true);
+  transition: background-color 300ms ease-out;
+  &:hover, &:focus {
+    background-color: $bright-ruby;
+    text-decoration: none;
+  }
+}

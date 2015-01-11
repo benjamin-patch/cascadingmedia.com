@@ -1,0 +1,18 @@
+<% wrap_layout :layout do %>
+
+<header class="light-gray">
+  <div class="page-title">
+    <h1><%= current_page.data.title %></h1>
+    <h3 class="subheader">Written by <%= current_page.data.author %><br>
+    <%= article_date %></h3>
+  </div>
+</header>
+
+<section class="white">
+  <div class="narrow-container">
+    <%= yield %>
+    <%= link_to("&#8592; InSites", "/insites.html", class: "insite-button") %>
+  </div>  
+</section>
+
+<% end %>

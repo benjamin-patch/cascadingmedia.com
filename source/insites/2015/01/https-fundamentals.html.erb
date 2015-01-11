@@ -1,0 +1,189 @@
+---
+title: HTTPS Fundamentals
+author: Benjamin Patch
+date: 2015-01-09
+
+insite_summary: We explain how HTTPS differs from regular HTTP and with visual examples from the five most common browsers, you will learn how to identify websites that implement HTTPS correctly. We then discuss the basics of Extended Validation (EV) certificates and knowing when HTTPS is important.
+
+description: We explain how HTTPS differs from HTTP and with visual examples from five browsers, you will learn how to identify websites that implement HTTPS correctly.
+---
+
+<h2>What is HTTPS?</h2>
+
+<p>HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the web. HTTPS (Hypertext Transfer Protocol Secure) is the <em>secure</em> version of HTTP, hence the trailing &#8220;S&#8221;. With HTTPS, information is encrypted while transmitting to and from web servers. With HTTP, no information is encrypted while in transit. Encryption is important because it is relatively simple to intercept packets of information as they shoot across the web. If encrypted information is intercepted, it can not be read by the person or software that intercepted it.</p>
+
+<p>For example, if the text:</p>
+
+<pre><code>Hello, my name is Alfred Pennyworth.
+</code></pre>
+
+<p>was encrypted, it would look something like this to anyone besides the intended recipient:</p>
+
+<pre><code>$2a$10$73jid8G92jHfDzFcGejfzeVNVv24DfFf6lVaDEHJWVjO9BWv.em/G
+</code></pre>
+
+<p>In other words, it would be nothing more than meaningless gibberish that does not even tell you how many characters the original information was composed of. Modern encryption algorithms are so complex that even with a tremendous amount of computing power, it could take many years (depending on numerous variables) to decipher the key required to decrypt this gibberish.</p>
+
+<p>Now imagine the harmless Alfred Pennyworth statement was instead, the password to your primary financial institution. It then becomes clear why encrypting sensitive information is so important. To recap, HTTPS encrypts your data while in transit, whereas HTTP does not.</p>
+
+<h2>Am I Using HTTPS?</h2>
+
+<p>As a user of the web, there are a few fundamental bits of knowledge that go a long way in protecting your data and therefore yourself. Knowing if any given website is using HTTPS, is one of those valuable bits of knowledge that I believe everyone, technical and non-technical people alike, should be aware of.</p>
+
+<h2>Chrome</h2>
+
+<p>Every modern web browser tells you if HTTPS is in use, all you need to know is what to look for. I use all five major browsers on a regular basis and, as of this writing, I think Chrome does the best job of communicating if HTTPS is in use. Let us take a look at Chrome&#8217;s address bar as our first browser example. Note the <em>lock</em> and green <em>https</em> text preceding the domain name.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-chrome.png", 
+  alt: "HTTPS website loading in Chrome") %>
+  <figcaption>
+    Chrome loading a website over HTTPS.<br> 
+    Note the lock and green https text preceding the domain name.
+  </figcaption>
+</figure>
+
+<p>Now contrast that with a website loading over unsecure HTTP, as seen below.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/http-chrome.jpg", 
+  alt: "HTTP website loading in Chrome") %>
+  <figcaption>
+    When there is no lock with green https text, Chrome is loading the website over HTTP.
+  </figcaption>
+</figure>
+
+<h2>Mixed Content Warning</h2>
+
+<p>A feature that can only be found in Chrome and Opera, at the time of this writing, is what is called a <em>mixed content warning</em>.  It means something is loading onto the HTTPS site from a HTTP source.  This type of vulnerability can be exploited by those who might not have your best interests at heart.  Here is what it looks like in Chrome.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-mixed-content-chrome.jpg", 
+  alt: "HTTPS website with mixed content warning in Chrome") %>
+  <figcaption>
+    When your see this icon in Chrome, it is telling you this website failed to implement HTTPS correctly and therefore is not secure.
+  </figcaption>
+</figure>
+
+<p>The irony is this particular article is advising WordPress sites on how to avoid the very kind of mixed content errors that can be found on their blog. I suppose this is a classic case of "do as I say, not as I do".</p>
+
+<h2>Firefox</h2>
+
+<p>While under the hood Firefox is handling HTTPS in the same secure manner as Chrome, it is not as obvious with its communication to you. There is nothing wrong with this, in fact, I prefer browsers that do not add bright and potentially distracting colors to their interface. However, for someone who does not know what to look for, HTTPS or the lack of it can easily be overlooked. Here is Firefox loading the first two websites we looked at earlier.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-firefox.png", 
+  alt: "HTTPS website loading in Firefox") %>
+  <figcaption>
+    Firefox loading a website over HTTPS.<br> 
+    Note the gray lock and https text preceding the domain.
+  </figcaption>
+</figure>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/http-firefox.jpg", 
+  alt: "HTTP website loading in Firefox") %>
+  <figcaption>
+    When there is no lock with https text, Firefox is loading the website over HTTP.
+  </figcaption>
+</figure>
+
+<h2>Internet Explorer</h2>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-ie11.png", 
+  alt: "HTTPS website loading in Internet Explorer") %>
+  <figcaption>
+    Internet Explorer loading a website over HTTPS.<br> 
+    Note the https text preceding the domain and the lock on the right side of the address bar.
+  </figcaption>
+</figure>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/http-ie11.jpg", 
+  alt: "HTTP website loading in Internet Explorer") %>
+  <figcaption>
+    Internet Explorer loading a website over HTTP.<br> 
+    Note the http text preceding the domain and no lock on the right side of the address bar.
+  </figcaption>
+</figure>
+
+<h2>Safari</h2>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-safari.png", 
+  alt: "HTTPS website loading in Safari") %>
+  <figcaption>
+    Safari loading a website over HTTPS.<br> 
+    Note the gray lock preceding the domain.
+  </figcaption>
+</figure>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/http-safari.jpg", 
+  alt: "HTTP website loading in Safari") %>
+  <figcaption>
+    When there is no lock, Safari is loading the website over HTTP or HTTPS is not implemented correctly.
+  </figcaption>
+</figure>
+
+<h2>Opera</h2>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-opera.png", 
+  alt: "HTTPS website loading in Opera") %>
+  <figcaption>
+    Opera loading a website over HTTPS.<br> 
+    Note the green lock and https preceding the domain.
+  </figcaption>
+</figure>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/http-opera.jpg", 
+  alt: "HTTP website loading in Opera") %>
+  <figcaption>
+    When there is no lock, Opera is loading the website over HTTP or HTTPS has not been implemented correctly.
+  </figcaption>
+</figure>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-mixed-content-opera.jpg", 
+  alt: "HTTPS website with mixed content in Opera") %>
+  <figcaption>
+    When there is no lock but you see https in the address bar, the website failed to implement HTTPS correctly and therefore is not secure.
+  </figcaption>
+</figure>
+
+<h2>Extended Validation</h2>
+
+<p>HTTPS websites have a public key certificate, which is an electronic document proving ownership of a public key. A public key is used to decrypt information sent over HTTPS. An Extended Validation (EV) certificate is a public key certificate issued after additional identity information has been verified. In the United States, it normally means an organization's physical address and legal documents have been reviewed and determined to be legitimate.</p>
+
+<p>When you connect to an HTTPS website with an EV certificate, your browser adds some additional information to the address bar. I have put together a simple infographic with an example EV certificate being loaded in each of the five browsers mentioned in previous examples.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-fundamentals/https-extended-validation.jpg", 
+  alt: "Five major browsers with Extended Validation examples") %>
+  <figcaption>
+    Five major browsers with extended validation examples. Note how Internet Explorer turns the entire address bar green, while the others include green identity tags that are not normally there.
+  </figcaption>
+</figure>
+
+<h2>Is an EV certificate more secure?</h2>
+
+<p>In a word, no. There is no technical difference between standard validation, extended validation or even self-signed certificates. Encryption strength is determined by the key, not the certificate that simply proves ownership of a public key. Your driver's license proves your identity (like a certificate) but it does not determine how well you can parallel park (encryption strength).</p>
+
+<p>EV certificates only provide additional browser feedback, they do <em>not</em> improve security. For this reason, I generally advise clients against spending extra money to buy an EV certificate and choose a standard public certificate instead. In a future article, I will explain how to do this yourself.</p>
+
+<h2>When is HTTPS important?</h2>
+
+<p>If you have stayed with me up to this point, you understand what HTTPS is and how to identify its proper use in the browser(s) of your choice. But one question remains, when should you be looking for HTTPS? A good rule of thumb would be anytime you are dealing with information that should not be available to the general public.</p>
+
+<p>Anytime a password is entered into any kind of web service, HTTPS should most definitely be in effect. Those dots that appear on password fields are only hiding what you type from someone looking over your shoulder. If HTTPS is not present, there is a good chance your password will be sent across the web as plain text. Because there is no encryption, if your information is intercepted, it can easily be read.</p>
+
+<p>HTTPS is also very important when connected to a public Wi-Fi network. Because these networks are usually unencrypted, it becomes trivial for others on the network to listen in on passing traffic. Without HTTPS, it is easy for others to discover and possibly exploit your sensitive information. With HTTPS, your information is protected from prying eyes.</p>
+
+<h2>HTTPS Everywhere</h2>
+
+<p>If you found this information useful, towards the end of January I will be publishing a follow up article on why website owners should be using HTTPS on all pages of all websites - even if those sites are not dealing with sensitive information. It is a concept called <em>HTTPS Everywhere</em>.</p>
+
+<p>If you have any questions or comments about HTTPS, I can be reached directly on Twitter <a href="https://twitter.com/BenjaminPatch" target="_blank">@BenjaminPatch</a>.  Until next time, take care and stay safe on the web!</p>
