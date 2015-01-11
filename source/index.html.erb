@@ -102,3 +102,31 @@ change_frequency: weekly
   </div>
 
 </div></section>
+
+<section class="ruby">
+  <div class="narrow-container">
+<% blog.articles[0...1].each do |article| %>
+  <div class="insite-snippet">
+    <header>
+      <h4>Latest from our InSites Blog</h4>
+      <h2>
+        <a href="<%= article.url %>"><%= article.title %></a>
+      </h2>
+      <h4>
+        Published <time><%= article.date.strftime('%B %e, %Y') %></time>
+      </h4>
+    </header>
+
+    <article>
+      <p><%= article.data.insite_summary %></p>
+    </article>
+
+    <footer>
+      <%= link_to("Read #{article.title}", article.url, class: "button") %>
+      <%= link_to("Other InSite Articles", "/insites.html", class: "button") %>
+    </footer>
+  </div>
+<% end %>
+
+  </div>
+</section>
