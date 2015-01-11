@@ -133,7 +133,7 @@ activate :blog do |blog|
   blog.layout = "article_layout"
 
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.sources = "{year}-{month}-{day}-{title}"
   # blog.taglink = "tags/{tag}.html"
 
   # blog.summary_separator = /(READMORE)/
