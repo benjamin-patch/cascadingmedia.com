@@ -31,6 +31,7 @@ activate :search_engine_sitemap
 # no layout
 page "/sitemap.xml", :layout => false
 page "/insites/feed.xml", :layout => false
+page "404.html", :layout => false
 
 page "insites.html", :layout => :insite_layout
 
