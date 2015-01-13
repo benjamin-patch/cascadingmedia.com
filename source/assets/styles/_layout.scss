@@ -57,6 +57,9 @@ nav.wide {
   .button:hover, .button:focus {
     background-color: $medium-gray;
   }
+  hr {
+    border-color: $deep-gray;
+  }
 }
 
 .wide-container {

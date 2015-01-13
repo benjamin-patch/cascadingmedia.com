@@ -1,9 +1,10 @@
 # Cascading Media
-  - Release: 6.3.0
-  - Date: 11 January 2015
+  - Release: 6.3.1
+  - Date: 12 January 2015
   - Name: r6ix
 
 ## Release Dates
+  - **6.3.1** => 12 January 2015
   - **6.3.0** => 11 January 2015
   - **6.2.0** => 16 December 2014
   - **6.1.0** => 16 November 2014
@@ -13,6 +14,9 @@
   - **6.0.0** => 20 August 2014
 
 ## Release Notes
+
+### 6.3.1
+  - Include direct newsletter subscription on InSites.
 
 ### 6.3.0
   - Promote most current InSite article on site index.
