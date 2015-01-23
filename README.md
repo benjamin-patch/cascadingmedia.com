@@ -1,9 +1,10 @@
 # Cascading Media
-  - Release: 6.3.1
-  - Date: 12 January 2015
+  - Release: 6.3.2
+  - Date: 22 January 2015
   - Name: r6ix
 
 ## Release Dates
+  - **6.3.2** => 22 January 2015
   - **6.3.1** => 12 January 2015
   - **6.3.0** => 11 January 2015
   - **6.2.0** => 16 December 2014
@@ -14,6 +15,9 @@
   - **6.0.0** => 20 August 2014
 
 ## Release Notes
+
+### 6.3.2
+  - Write 'HTTPS Everywhere' article.
 
 ### 6.3.1
   - Include direct newsletter subscription on InSites.
@@ -45,6 +49,7 @@
   - Custom 404 error page properly configured.
 
 ## Future Tasks
+  - Create Moz-like blog subscription interface.
   - Improve user feedback and speed of contact form.
   - Work on print styles.
   - Rewrite H5BP helpers as Sass mixins.
