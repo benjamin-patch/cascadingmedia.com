@@ -1,0 +1,102 @@
+---
+title: HTTPS Everywhere
+author: Benjamin Patch
+date: 2015-01-22
+
+insite_summary: Since Google’s I/O developer conference in June 2014, the tech giant has been encouraging the use of HTTPS everywhere. This article expands on the base concepts outlined in HTTPS Fundamentals and then examines why HTTPS is important for all pages of all websites, even when there is no sensitive information to protect.
+
+description: Google has been encouraging the use of HTTPS everywhere. This article examines why HTTPS is important for all pages of all websites.
+---
+
+<h2>Google&#8217;s Encouragement</h2>
+
+<p>Since Google&#8217;s I/O developer conference in June 2014, the tech giant has been encouraging the use of <em>HTTPS everywhere</em>. And because this encouragement is coming from Google, it has created significant reverberations across the web. This article expands on the the concepts outlined in <a href="https://cascadingmedia.com/insites/2015/01/https-fundamentals.html">HTTPS Fundamentals</a> and then examines why HTTPS is important for all pages of all websites, even when there is no sensitive information to protect.</p>
+
+<h2>CIA Triad</h2>
+
+<p>Because <em>security</em> is such a broad term, throughout this article I will be focused on a modified version of the classic <a href="https://en.wikipedia.org/wiki/Information_security#Key_concepts" target="_blank">CIA triad</a>, which is at the heart of information security. This CIA is unrelated to the better known American intelligence agency, although the Central Intelligence Agency certainly employs these concepts.</p>
+
+<ul>
+<li><strong>Confidentiality</strong> - is the communication private, or can anyone read the data?</li>
+<li><strong>Integrity</strong> - has the original data been tampered with?</li>
+<li><strong>Authenticity</strong> – are the servers who they claim to be?</li>
+</ul>
+
+<p>In this case I am replacing the classic CIA aspect of <em>Availability</em> with <em>Authenticity</em> because server availability goes beyond the scope of this article. Although, as we will see later, server availability is indirectly improved when using HTTPS.</p>
+
+<h2>HTTP over TLS</h2>
+
+<p>Before we look at a few examples, I would like to note one other technical item. When HTTP (Hypertext Transfer Protocol) runs on top of <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS (Transport Layer Security)</a>, it becomes HTTPS (Hypertext Transfer Protocol Secure). TLS is a protocol designed to provide secure communications across the web and is a substantial topic in itself. The take away here is when I mention HTTPS, I am actually referring to HTTP running over TLS - just more concisely.</p>
+
+<p>If this terminology is new to you (especially HTTP and HTTPS), I suggest reading my previous article <a href="https://cascadingmedia.com/insites/2015/01/https-fundamentals.html">HTTPS Fundamentals</a> and then build upon those base concepts by continuing with this article.</p>
+
+<h2>HTTP Fails CIA</h2>
+
+<p>Unsecure HTTP fails on all three CIA counts. Information over HTTP is not confidential, it lacks integrity and cannot be authenticated. I have put together a simple diagram illustrating how, without drawing anyone&#8217;s attention, a <em>passive</em> attacker can easily listen to HTTP traffic passing over a public Wi-Fi network.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-everywhere/http-passive-attacker.png", 
+  alt: "HTTP passive attacker listening.") %>
+</figure>
+
+<p>This same passive attacker is easily defeated when data is encrypted over a secure HTTPS connection.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-everywhere/https-passive-attacker.png", 
+  alt: "HTTPS passive attacker only sees random bits.") %>
+</figure>
+
+<h2>Defeating Encryption</h2>
+
+<p>Encryption alone is not enough to secure a website/server from an <em>active</em> attacker. Unlike a passive attacker, an active attacker can redirect traffic to a phony server under their control. This phony server essentially impersonates the legitimate server that users want to reach. Once an active attacker has accomplished this, they are free to collect any information the user submits - regardless if the channel is encrypted or not.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-everywhere/http-active-attacker.png", 
+  alt: "HTTP active attacker redirecting traffic to phony server.") %>
+</figure>
+
+<h2>Defeating Active Attackers</h2>
+
+<p>Verifying the server&#8217;s authenticity is key to defeating active attackers. Fortunately, TLS has this covered as well. As you recall, HTTPS is really just HTTP running over TLS. When HTTPS is implemented correctly, here is what happens to active attackers.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-everywhere/https-active-attacker.png", 
+  alt: "HTTPS active attacker cannot fake legitimate server certificate or modify data.") %>
+</figure>
+
+<p>Because the legitimate server&#8217;s Certificate Authority (CA) verifies ownership of the domain (yourwebsite.com), an active attacker cannot fake the certificate. Encryption prevents the attacker from reading or modifying any intercepted data. In short, the entire CIA triad is satisfied and both passive and active attackers are defeated.</p>
+
+<h2>HTTPS Sometimes</h2>
+
+<p>Many websites only employ HTTPS on pages that deal with sensitive information such as passwords and credit card numbers. While this is much better than using HTTP, it opens up all kinds of security vulnerabilities that can be exploited by attackers. Here is an example.</p>
+
+<p>Start by thinking back to our example of passive attackers listening to passing HTTP traffic. If a financial institution only secures account pages, it may become clear to an attacker that this particular user does business with that particular financial institution. Now the attacker has a starting point.</p>
+
+<p>Now say the attacker is able to discover the user&#8217;s favorite password by watching when they sign into an unrelated online service that fails to properly employ HTTPS. If that person uses the same password everywhere, the attacker already knows which bank to focus on.</p>
+
+<h2>HTTPS Everywhere</h2>
+
+<p>Online banking is an obvious example where HTTPS needs to be everywhere, very few people find this controversial. But what about a personal blog or business website that does not deal with passwords or credit card numbers? Again, by monitoring the activities of any given person for a period of time, an attacker can build a narrative about this person.</p>
+
+<p>Are they interested in buying stocks, life insurance, hiring a high-end web developer, shopping for a new luxury car? &#8220;Great,&#8221; thinks the attacker, &#8220;this person must have assets and therefore is a good target. I&#8217;ll keep watching until I have something more useful.&#8221; With HTTPS everywhere, the passive attacker is denied this valuable information.</p>
+
+<h2>SEO Bonus</h2>
+
+<p>As a bonus for protecting the privacy of your visitors, <a href="https://googlewebmastercentral.blogspot.com/2014/08/https-as-ranking-signal.html" target="_blank">Google has publicly announced</a> they are giving a small SEO (Search Engine Optimization) boost to websites that correctly employ HTTPS on all pages. Given the many benefits of HTTPS everywhere and Google&#8217;s desire to improve its privacy credibility, it is fair to say this small SEO boost will increase over time.</p>
+
+<h2>HTTPS Excuses Defeated</h2>
+
+<p>For the reasons outlined in this article, I strongly encourage all website owners to implement HTTPS everywhere. If you believe this will slow down your website or require extra hardware to support, then you should check out <a href="https://istlsfastyet.com/" target="_blank">Is TLS Fast Yet?</a> for help with performance optimization. If you believe certificates are too expensive, then I encourage you to take a look at <a href="https://letsencrypt.org/" target="_blank">Let&#8217;s Encrypt</a> or <a href="https://www.startssl.com/" target="_blank">Start SSL</a>, where free certificates are available.</p>
+
+<p>If the implementation of HTTPS everywhere is too technical for you, then ask your webmaster to take care of it. If your webmaster is unable to do so, hire a competent webmaster.</p>
+
+<h2>HTTPS Quality Check</h2>
+
+<p>You can check the quality of any HTTPS implementation with the free <a href="https://www.ssllabs.com/ssltest/" target="_blank">Qualys SSL Lab Server Test</a>. As of this writing, <strong>cascadingmedia.com</strong> earned an &#8220;A&#8221; letter grade for its overall HTTPS implementation. For perspective, Bank of America earned a &#8220;B&#8221; from the same Qualys test. JPMorgan Chase also earned a &#8220;B&#8221;, however, some of their servers failed entirely. Makes one think twice about &#8220;bank level security&#8221;.</p>
+
+<figure>
+  <%= image_tag("insites/2015/01/https-everywhere/https-quality-cascadingmedia.com.png", 
+  alt: "cascadingmedia.com Qualys test result.") %>
+</figure>
+
+<p>If you have any questions or comments about HTTPS everywhere, I can be reached on Twitter <a href="https://twitter.com/BenjaminPatch" target="_blank">@BenjaminPatch</a>. Until next time, take care and secure your website with HTTPS everywhere!</p>
