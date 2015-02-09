@@ -1,7 +1,7 @@
 ---
 title: URL Anatomy with SEO Tips
 author: Benjamin Patch
-date: 2015-02-06
+date: 2015-02-09
 
 insite_summary: URLs describe the location of a web page or other resources. To help explain the various components, we break down an example URL and explain each part. The article then provides tips to create SEO friendly URLs.
 
@@ -19,7 +19,7 @@ description: To help explain the various URL components, we break down an exampl
   (<a target="_blank" href="https://en.wikipedia.org/wiki/Mailto">mailto</a>), 
   database access
   (<a target="_blank" href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a>) 
-  plus many other applications.
+  and many other applications.
   An HTTP URL can also describe the location of external resources such as images,
   style sheets,
   scripts
@@ -39,23 +39,60 @@ description: To help explain the various URL components, we break down an exampl
         alt: "URL Anatomy") %>
 </figure>
 
-<h2>1. Protocol</h2>
+<h2>1. Scheme</h2>
 
-<p>The protocol represents what type of connection has been made with the server hosting this resource. Clients such as web browsers connect to websites over the Hypertext Transfer Protocol, otherwise known as HTTP. To learn more about HTTP and its secure alternative HTTPS, please read my previous articles <a href="https://cascadingmedia.com/insites/2015/01/https-fundamentals.html">HTTPS Fundamentals</a> and <a href="https://cascadingmedia.com/insites/2015/01/https-everywhere.html">HTTPS Everywhere</a>.</p>
+<p>
+  The protocol represents what type of connection has been made with the server hosting this resource.
+  Clients such as web browsers connect to websites over the Hypertext Transfer Protocol,
+  otherwise known as HTTP.
+  To learn more about HTTP and its secure alternative HTTPS,
+  please read my previous articles
+  <a href="https://cascadingmedia.com/insites/2015/01/https-fundamentals.html">HTTPS Fundamentals</a>
+  and
+  <a href="https://cascadingmedia.com/insites/2015/01/https-everywhere.html">HTTPS Everywhere</a>.
+</p>
 
 <h2>2. Subdomain</h2>
 
-<p>While www is the most common subdomain, URLs can be configured to use no subdomain or change it to any value consisting of alphanumeric ASCII characters (a-z, 0-9) that are not case-sensitive. Hyphens are permitted if surrounded by other ASCII characters or other hyphens. Hyphens cannot be the first or last character of any subdomain or domain.</p>
+<p>
+  While www is the most common subdomain,
+  URLs can be configured to use no subdomain
+  or change it to any value consisting of alphanumeric ASCII characters (a-z, 0-9)
+  that are not case-sensitive.
+  Hyphens are permitted if surrounded by other ASCII characters or other hyphens.
+  Hyphens cannot be the first or last character of any subdomain or domain.
+</p>
 
 <h2>www Commentary</h2>
 
-<p>Unless a website already ranks high in search engines, I do not recommend using www subdomains. Because many people have formed a habit of typing www prior to any domain, the server should be configured with a permanent 301 redirect to the non-www domain. This way no traffic is lost and the complete URL is more concise.</p>
+<p>
+  Unless a website already ranks high in search engines,
+  I do not recommend using www subdomains.
+  Because many people have formed a habit of typing www prior to any domain,
+  the server should be configured with a permanent 301 redirect to the non-www domain.
+  This way no traffic is lost and the complete URL is more concise.
+</p>
 
-<p>Allowing both the www and non-www domain to load without redirecting to one or the other is also something I do not recommended. To me, this practice implies a lack of attention to detail but beyond my own opinion is how most search engines treat each subdomain (or the lack of one) as a separate entity. This means that any domain authority <strong>blog.example.com</strong> has built up may not transfer to the rest of <strong>example.com</strong>. Instead, the blog should be published to <strong>example.com/blog</strong>.</p>
+<p>
+  Allowing both the www and non-www domain to load
+  without redirecting to one or the other
+  is also something I do not recommended.
+  To me,
+  this practice implies a lack of attention to detail
+  but beyond my own opinion is
+  how most search engines treat each subdomain (or the lack of one) as a separate entity.
+  This means that any domain authority <code>blog.example.com</code> has built up
+  may not transfer to the rest of <code>example.com</code>.
+  Instead,
+  the blog should be published to <code>example.com/blog</code>.
+</p>
 
 <h2>3-4. Domain + Top-level</h2>
 
-<p>In October 1984, the original set of top-level domains were defined as:</p>
+<p>
+  In October 1984,
+  the original set of top-level domains were defined as:
+</p>
 
 <ul>
 <li>.com</li>
@@ -66,15 +103,46 @@ description: To help explain the various URL components, we break down an exampl
 <li>.net</li>
 </ul>
 
-<p>Since 1984 a handful of new top-level domains were created but the most significant change came in 2012 when ICANN (Internet Corporation for Assigned Names and Numbers) authorized the creation of nearly two thousand new top-level domains. A complete list can be found on <a href="https://www.icann.org/resources/pages/tlds-2012-02-25-en" target="_blank">icann.org</a>. Several hundred of these new top-level domains are now available for registration and more will become available in the near future.</p>
+<p>
+  Since 1984 a handful of new top-level domains were created
+  but the most significant change came in 2012
+  when ICANN (Internet Corporation for Assigned Names and Numbers)
+  authorized the creation of nearly two thousand new top-level domains.
+  A complete list can be found on
+  <a target="_blank" href="https://www.icann.org/resources/pages/tlds-2012-02-25-en">
+    icann.org
+  </a>.
+  Several hundred of these new top-level domains are now available for registration
+  and more will become available in the near future.
+</p>
 
-<h2>5. Path/Page</h2>
+<h2>5. Port</h2>
 
-<p>Following the top-level domain is the location and name of the requested resource, in our case, a web page. This portion of a URL plus everything to its right is called a URI (Uniform Resource Identifier). In the diagram above, the &#8220;descriptive-title&#8221; page is located in a directory (folder) named &#8220;topic&#8221;. This web page could be nested within several more directories, but in this example there is only one. If this page lived in the site&#8217;s root directory, no directory would proceed the page.</p>
+<p>
+  Following the top-level domain is the location and name of the requested resource,
+  in our case,
+  a web page.
+  This portion of a URL
+  plus everything to its right
+  is called a URI (Uniform Resource Identifier).
+  In the diagram above,
+  the &#8220;descriptive-title&#8221; page
+  is located in a directory (folder) named &#8220;topic&#8221;.
+  This web page could be nested within several more directories,
+  but in this example there is only one.
+  If this page lived in the site&#8217;s root directory,
+  no directory would proceed the page.
+</p>
 
-<h2>6. File Extension</h2>
+<h2>6. Path</h2>
 
-<p>Staying within the context of a web page, a file extension describes the type of server-side code that generated the markup. Not all URLs include a file extension but if they do, it will always follow the resource name. Some common file extensions are:</p>
+<p>
+  Staying within the context of a web page,
+  a file extension describes the type of server-side code that generated the markup.
+  Not all URLs include a file extension but if they do,
+  it will always follow the resource name.
+  Some common file extensions are:
+</p>
 
 <ul>
 <li>.html</li>
@@ -86,50 +154,134 @@ description: To help explain the various URL components, we break down an exampl
 <li>.cfm (ColdFusion)</li>
 </ul>
 
-<h2>7. In-page Bookmark</h2>
+<h2>7. Query String</h2>
 
-<p>Within an HTML document (web page) individual sections can be identified as bookmarks. If a bookmark is included as part of the URL, web browsers will jump directly to that point. This specificity can be very helpful on web pages with a significant amount of content. In-page bookmarks are also the basis for navigation options within <a href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank">single-page applications</a>.</p>
+<p>
+  Query String write-up...
+</p>
+
+<h2>8. Fragment Identifier</h2>
+
+<p>
+  Within an HTML document
+  (web page)
+  individual sections can be identified as bookmarks.
+  If a bookmark is included as part of the URL,
+  web browsers will jump directly to that point.
+  This specificity can be very helpful on web pages with a significant amount of content.
+  Fragment identifiers are also the basis for navigation options within
+  <a target="_blank" href="https://en.wikipedia.org/wiki/Single-page_application">
+    single-page applications
+  </a>.
+</p>
 
 <h2>SEO Friendly URLs</h2>
 
-<p>If SEO (Search Engine Optimization) is a goal of your website, here is how to make the most of URLs.</p>
+<p>
+  If SEO (Search Engine Optimization) is a goal of your website,
+  here is how to make the most of URLs.
+</p>
 
 <h3>HTTPS</h3>
 
-<p>Use the HTTPS protocol instead of HTTP. Besides protecting the privacy of your visitors, <a href="https://googlewebmastercentral.blogspot.com/2014/08/https-as-ranking-signal.html" target="_blank">Google has publicly announced</a> they are giving a small SEO bonus to websites that correctly employ HTTPS on all pages. To learn more about this, please read <a href="https://cascadingmedia.com/insites/2015/01/https-everywhere.html">HTTPS Everywhere</a>.</p>
+<p>
+  Use the HTTPS protocol instead of HTTP.
+  Besides protecting the privacy of your visitors,
+  <a target="_blank" href="https://googlewebmastercentral.blogspot.com/2014/08/https-as-ranking-signal.html">
+    Google has publicly announced
+  </a>
+  they are giving a small SEO bonus to websites that correctly employ HTTPS on all pages.
+  To learn more about this,
+  please read
+  <a href="https://cascadingmedia.com/insites/2015/01/https-everywhere.html">
+    HTTPS Everywhere
+  </a>.
+</p>
 
 <h3>Subdomains</h3>
 
-<p>If you choose to use subdomains, be careful because most search engines treat each subdomain as a separate entity. This dilutes the effectiveness of any domain authority your website has earned.</p>
+<p>
+  If you choose to use subdomains,
+  be careful because most search engines treat each subdomain as a separate entity.
+  This dilutes the effectiveness of any domain authority your website has earned.
+</p>
 
 <h3>Keyword Separators</h3>
 
-<p>Use hyphens (-) to separate path/page keywords and not underscores (_). This is because words separated by hyphens are easier for search engines to parse.</p>
+<p>
+  Use hyphens (-) to separate path/page keywords and not underscores (_).
+  This is because words separated by hyphens are easier for search engines to parse.
+</p>
 
-<h3>In-page Bookmarks</h3>
+<h3>Fragment Identifiers</h3>
 
-<p>Use of in-page bookmarks may help search engines better understand page structure. If a bookmark contains more than one word, separate the words with a hyphen.</p>
+<p>
+  Use of fragment identifiers may help search engines better understand page structure.
+  If a fragment identifier contains more than one word,
+  separate the words with a hyphen.
+</p>
 
 <h3>URL Length</h3>
 
-<p>Keyword effectiveness decreases as URL length increases. This is another good reason not to use a www subdomain.</p>
+<p>
+  Keyword effectiveness decreases as URL length increases.
+  Keep your URLs keyword rich but concise.
+  Remove unimportant words like:
+</p>
 
-<h3>Clean URLs</h3>
+<ul>
+  <li>the</li>
+  <li>a/an</li>
+  <li>with</li>
+  <li>etc.</li>
+</ul>
 
-<p>Search engines prefer clean, human readable URLs. If your website&#8217;s markup is generated by server-side scripts, some URLs might look something like this:</p>
+<p>
+  Minimizing URL length is another good reason not to use a www subdomain.
+</p>
+
+<h3>Query Strings</h3>
+
+<p>
+  Search engines prefer clean, human readable URLs.
+  If your website&#8217;s markup is generated by server-side scripts,
+  some URLs might look something like this:
+</p>
 
 <pre><code>https://example.com/index.php?article=1234
 </pre></code>
 
-<p>This URL would be far more effective in search engines if it read:</p>
+<p>
+  This URL would be far more effective in search engines if it read:
+</p>
 
 <pre><code>https://example.com/articles/create-seo-friendly-url
 </code></pre>
 
-<p>The second example is longer but it describes the page content far more effectively.</p>
+<p>
+  The second example is longer
+  but it describes the page content far more effectively.
+</p>
 
 <h2>Content is Key</h2>
 
-<p>As a parting SEO thought, remember that technical optimizations like these are helpful but the key to ranking better in search engines is to regularly publish high quality content. With quality content comes inbound links, which leads to higher search engine rankings.</p>
+<p>
+  As a parting SEO thought,
+  remember that technical optimizations like these are helpful
+  but the key to ranking higher in search engines
+  is to publish high quality content
+  on a regular basis.
+  With quality content comes inbound links,
+  which leads to higher search engine rankings.
+</p>
 
-<p>If you have any URL / SEO questions or comments, I can be reached on Twitter <a href="https://twitter.com/BenjaminPatch" target="_blank">@BenjaminPatch</a>. Until next time, take pride in well crafted URLs.</p>
+<p>
+  If you have any URL / SEO questions or comments,
+  I can be reached on Twitter
+  <a target="_blank" href="https://twitter.com/BenjaminPatch">
+    @BenjaminPatch
+  </a>.
+  Until next time,
+  take pride in creating
+  well crafted URLs.
+</p>
