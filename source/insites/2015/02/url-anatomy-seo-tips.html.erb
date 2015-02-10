@@ -123,6 +123,15 @@ description: To help explain the various URL components, we break down an exampl
 <h2>5. Port</h2>
 
 <p>
+  Public URLs often do not include a port number.
+  In those cases,
+  the scheme's default port number is used.
+  The default port numbers for HTTP and HTTPS are 80 and 443, respectfully.
+</p>
+
+<h2>6. Path</h2>
+
+<p>
   Following the top-level domain is the location and name of the requested resource,
   in our case,
   a web page.
@@ -137,26 +146,6 @@ description: To help explain the various URL components, we break down an exampl
   If this page lived in the site&#8217;s root directory,
   no directory would proceed the page.
 </p>
-
-<h2>6. Path</h2>
-
-<p>
-  Staying within the context of a web page,
-  a file extension describes the type of server-side code that generated the markup.
-  Not all URLs include a file extension but if they do,
-  it will always follow the resource name.
-  Some common file extensions are:
-</p>
-
-<ul>
-<li>.html</li>
-<li>.htm (shorten form of HTML)</li>
-<li>.php</li>
-<li>.asp</li>
-<li>.aspx (ASP.NET)</li>
-<li>.jsp (Java)</li>
-<li>.cfm (ColdFusion)</li>
-</ul>
 
 <h2>7. Query String</h2>
 
