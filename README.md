@@ -1,9 +1,10 @@
 # Cascading Media
-  - Release: 6.3.2
-  - Date: 22 January 2015
+  - Release: 6.3.3
+  - Date: 10 February 2015
   - Name: r6ix
 
 ## Release Dates
+  - **6.3.3** => 10 February 2015
   - **6.3.2** => 22 January 2015
   - **6.3.1** => 12 January 2015
   - **6.3.0** => 11 January 2015
@@ -15,6 +16,11 @@
   - **6.0.0** => 20 August 2014
 
 ## Release Notes
+
+### 6.3.3
+  - Write 'URL Anatomy with SEO Tips'.
+  - Semantic Linefeeds
+  - Collect demographic data from visitors.
 
 ### 6.3.2
   - Write 'HTTPS Everywhere' article.
