@@ -1,0 +1,329 @@
+---
+title: URL Anatomy with SEO Tips
+author: Benjamin Patch
+date: 2015-02-10
+
+insite_summary: URLs describe the location of a web page or other resources. To help explain the various components, we break down an example URL and explain each part. The article then provides tips to create SEO friendly URLs.
+
+description: To help explain the various URL components, we break down an example and explain each part. The article then provides tips to create SEO friendly URLs.
+---
+
+<h2>What is a URL?</h2>
+
+<p>
+  A URL (Uniform Resource Locator) most commonly references web pages 
+  (<a target="_blank" href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a>)
+  but can also apply to file transfer
+  (<a target="_blank" href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a>), 
+  email 
+  (<a target="_blank" href="https://en.wikipedia.org/wiki/Mailto">mailto</a>), 
+  database access
+  (<a target="_blank" href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a>) 
+  and many other applications.
+  An HTTP URL can also describe the location of external resources such as an image,
+  style sheet,
+  script
+  and even a specific section within an HTML document.
+  Complete or at least partial URLs appear in the address bar of most web browsers.
+</p>
+
+<p>
+  This article focuses on HTTP URLs,
+  also known as web addresses.
+  To help explain the various parts of a URL,
+  I have put together the following reference diagram.
+</p>
+
+<figure>
+  <%= image_tag("insites/2015/02/url-anatomy/url-anatomy.png", 
+        alt: "HTTP URL Anatomy") %>
+</figure>
+
+<h2>1. Scheme</h2>
+
+<p>
+  The scheme is usually the name of a protocol,
+  which defines how the resource will be obtained.
+  However,
+  schemes like "file" and "mailto" do not specify a protocol.
+  Clients such as web browsers connect to websites over the Hypertext Transfer Protocol,
+  otherwise known as HTTP.
+  To learn more about HTTP and its secure alternative HTTPS,
+  please read my previous articles
+  <a href="https://cascadingmedia.com/insites/2015/01/https-fundamentals.html">HTTPS Fundamentals</a>
+  and
+  <a href="https://cascadingmedia.com/insites/2015/01/https-everywhere.html">HTTPS Everywhere</a>.
+</p>
+
+<h2>2. Subdomain</h2>
+
+<p>
+  While www is most common,
+  subdomains can be configured with any value consisting of
+  case-insensitive alphanumeric ASCII characters (a-z, 0-9).
+  Hyphens are permitted if surrounded by other ASCII characters or other hyphens.
+  Hyphens cannot be the first or last character of any domain or subdomain.
+  Subdomains can also be removed,
+  shortening and simplifying the entire URL.
+</p>
+
+<h2>www.commentary</h2>
+
+<p>
+  Unless a website already ranks high in search engines,
+  I do not recommend using www subdomains.
+  Because many people have formed a habit of typing www prior to any domain,
+  the server should be configured with a permanent 301 redirect to the non-www domain.
+  This way no traffic is lost and the complete URL is more concise.
+</p>
+
+<p>
+  Allowing both the www and non-www domain to load
+  without redirecting to one or the other
+  is also something I do not recommended.
+  To me,
+  this practice implies a lack of attention to detail
+  but beyond my own opinion is
+  how most search engines treat each subdomain (or the lack of one) as a separate entity.
+  This means that any domain authority <code>blog.example.com</code> has built up
+  may not transfer to the rest of <code>example.com</code>.
+  Instead,
+  the blog should be published to <code>example.com/blog</code>.
+</p>
+
+<h2>3-4. Domain + Top-level</h2>
+
+<p>
+  In October 1984,
+  the original set of top-level domains were defined as:
+</p>
+
+<ul>
+<li>.com</li>
+<li>.edu</li>
+<li>.gov</li>
+<li>.mil</li>
+<li>.org</li>
+<li>.net</li>
+</ul>
+
+<p>
+  Since 1984 a handful of new top-level domains were created
+  but the most significant change came in 2012
+  when ICANN (Internet Corporation for Assigned Names and Numbers)
+  authorized the creation of nearly two thousand new top-level domains.
+  A complete list can be found on
+  <a target="_blank" href="https://www.icann.org/resources/pages/tlds-2012-02-25-en">
+    icann.org</a>.
+  Several hundred of these new top-level domains are now available for registration
+  and more will become available in the near future.
+</p>
+
+<h2>5. Port</h2>
+
+<p>
+  The purpose of a port is to
+  uniquely identify different processes or applications running on a single server.
+  Port numbers enable each process or application to share a network connection.
+  Public URLs often do not include a port number.
+  In those cases,
+  the scheme's default port is used.
+  Default ports for HTTP and HTTPS are 80 and 443,
+  respectfully.
+</p>
+
+<h2>6. Path</h2>
+
+<p>
+  A path describes a specific location within a file system.
+  In the context of an HTTP URL,
+  a path describes a specific resource
+  such as an HTML document. 
+  A path describing a static HTML (no server-side scripts) resource
+  reflects the publicly accessible file structure of the server.
+  A path describing resources generated by server-side scripts
+  like Ruby or PHP
+  do not necessarily reflect the server's file structure.
+  This is due to the dynamic nature of server-side scripts.
+</p>
+
+<h2>7. Query String</h2>
+
+<p>
+  The query string contains data
+  that will be sent to the server
+  for additional processing.
+  It may contain name/value pairs
+  separated by an ampersand (&amp;),
+  like so:
+</p>
+
+<pre><code>?first_name=Alfred&last_name=Pennyworth
+</code></pre>
+
+<p>
+  In the example above,
+  the data would be:<br>
+  "First Name: Alfred"<br>
+  "Last Name: Pennyworth"<br>
+</p>
+
+<p>
+  This data is then passed to server-side scripts for processing.
+  If this is a valid query,
+  the server will return information pertinent to Alfred Pennyworth.
+</p>
+
+<h2>8. Fragment Identifier</h2>
+
+<p>
+  Within an HTML document,
+  individual sections can be assigned unique names
+  by way of an ID attribute.
+  An example would look like this:
+</p>
+
+<pre><code>&lt;section id="foo"&gt;
+
+  &lt;!-- section content --&gt;
+
+&lt;/section&gt;</code></pre>
+
+<p>
+  If the fragment identifier <code>#foo</code> is attached to the end of a URL,
+  web browsers will jump directly to that section.
+  This specificity can be very helpful on web pages with a significant amount of content.
+  IDs and fragment identifiers also form the basis of navigation options within
+  <a target="_blank" href="https://en.wikipedia.org/wiki/Single-page_application">
+    single-page applications</a>.
+</p>
+
+<p>
+  As a technical note,
+  ID attributes can be used with any valid HTML tag.
+  They are not limited to section tags as illustrated above.
+  Regardless of the HTML tag,
+  the fragment identifier uses the same syntax within the URL.
+</p>
+
+<h2>SEO Friendly URLs</h2>
+
+<p>
+  If SEO (Search Engine Optimization) is a goal of your website,
+  here is how to make the most of URLs.
+</p>
+
+<h3>HTTPS Everywhere</h3>
+
+<p>
+  Use the HTTPS protocol instead of HTTP.
+  Besides protecting the privacy of your visitors,
+  <a target="_blank" href="https://googlewebmastercentral.blogspot.com/2014/08/https-as-ranking-signal.html">
+    Google has publicly announced
+  </a>
+  they are giving a small SEO bonus to websites that correctly employ HTTPS on all pages.
+  To learn more about this,
+  please read
+  <a href="https://cascadingmedia.com/insites/2015/01/https-everywhere.html">
+    HTTPS Everywhere</a>.
+</p>
+
+<h3>Use Subdomains with Caution</h3>
+
+<p>
+  If you choose to use subdomains,
+  be careful because most search engines treat each subdomain as a separate entity.
+  This dilutes the effectiveness of any domain authority your website has earned.
+</p>
+
+<h3>Keyword Separators</h3>
+
+<p>
+  Use hyphens (-) to separate keywords, 
+  not underscores (_).
+  This is because words separated by hyphens are easier for search engines to parse.
+</p>
+
+<h3>Reduce URL Length</h3>
+
+<p>
+  Keyword effectiveness decreases as URL length increases.
+  Keep a URL keyword rich but concise.
+  Minimizing URL length is another good reason not to use a www subdomain.
+</p>
+
+<h3>Remove Stop Words</h3>
+
+<p>
+  Words that carry little to no keyword value are known as "stop words".
+  Grammatically,
+  the best keywords are generally nouns, verbs and adjectives.
+  The worst keywords are generally function words,
+  which should be removed from URLs.
+  Here are some examples:
+</p>
+
+<ul>
+  <li>articles (the, an, a)</li>
+  <li>auxiliary verbs (am, is, can)</li>
+  <li>conjunctions (and, or, but, while)</li>
+  <li>particles (then, thus)</li>
+  <li>prepositions (of, on, for)</li>
+  <li>pronouns (he, her, we, which)</li>
+</ul>
+
+<p>
+  
+</p>
+
+<h3>Avoid Query Strings</h3>
+
+<p>
+  Search engines prefer clean, human readable URLs.
+  If markup is generated by server-side scripts,
+  some URLs might contain query strings like this:
+</p>
+
+<pre><code>https://example.com/index.php?article=1234
+</pre></code>
+
+<p>
+  This URL would be far more effective in search engines if it read:
+</p>
+
+<pre><code>https://example.com/articles/create-seo-friendly-url
+</code></pre>
+
+<p>
+  The second example is longer
+  but it describes the content far more effectively.
+</p>
+
+<h3>Consider Fragment Identifiers</h3>
+
+<p>
+  Use of fragment identifiers may help search engines better understand page structure.
+  If a fragment identifier contains more than one word,
+  separate the words with a hyphen.
+</p>
+
+<h2>Content is Key</h2>
+
+<p>
+  As a parting SEO thought,
+  remember that technical optimizations like these are helpful
+  but the key to ranking higher in search engines
+  is to publish high quality content
+  on a regular basis.
+  With quality content comes inbound links,
+  which leads to higher search engine rankings.
+</p>
+
+<p>
+  If you have any URL / SEO questions or comments,
+  I can be reached on Twitter
+  <a target="_blank" href="https://twitter.com/BenjaminPatch">
+    @BenjaminPatch</a>.
+  Until next time,
+  take pride in crafting great URLs!
+</p>
