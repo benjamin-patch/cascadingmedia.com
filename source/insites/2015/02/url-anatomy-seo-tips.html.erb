@@ -241,7 +241,21 @@ description: To help explain the various URL components, we break down an exampl
 <p>
   Use hyphens (-) to separate keywords, 
   not underscores (_).
-  This is because words separated by hyphens are easier for search engines to parse.
+  This is because most search engines treat
+  <code>alfred-pennyworth-biography</code>
+  as three separate words
+  and <code>alfred_pennyworth_biography</code>
+  as a single word.
+</p>
+
+<p>
+  By using hyphens,
+  queries for
+  "alfred pennyworth", "alfred biography" and "alfred"
+  will all be considered relevant.
+  Otherwise,
+  only queries for exactly "alfred_pennyworth_biography"
+  will be considered relevant.
 </p>
 
 <h3>Reduce URL Length</h3>
