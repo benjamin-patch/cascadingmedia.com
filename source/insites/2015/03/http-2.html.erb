@@ -1,0 +1,348 @@
+---
+title: HTTP/2 for a Faster Web
+author: Benjamin Patch
+date: 2015-03-18
+
+insite_summary: HTTP/2 is a long overdue update for the Web. As it becomes widely adopted over the next few years, websites will become faster and more capable than ever before. Learn why HTTP/2 is a significant step forward for the entire Web.
+
+description: HTTP/2 is a long overdue update for the Web. As it becomes widely adopted, websites will become faster and more capable than ever before.
+---
+
+<h2>HTTP/2 Objectives</h2>
+<p>
+  The Internet Engineering Task Force (IETF)
+  approved the proposed HTTP/2 standard
+  in February 2015.
+  HTTP/2 is the first major update to HTTP
+  (Hypertext Transfer Protocol)
+  since HTTP/1.1,
+  which was standardized in 1999.
+  The primary objective of HTTP/2
+  is to maintain high-level compatibility with HTTP/1.1,
+  while decreasing latency.
+  In other words,
+  avoid breaking the Web while making it faster.
+</p>
+
+<h2>SPDY Origins</h2>
+<p>
+  Since late 2009
+  Google has been developing an experimental protocol called SPDY
+  (pronounced speedy).
+  SPDY is a trademark of Google and not an acronym.
+  HTTP/2 was originally based on the SPDY experiment.
+  In fact,
+  many SPDY core developers were involved in the development of HTTP/2.
+  As of February 2015,
+  Google announced support for SPDY would be deprecated in favor of HTTP/2
+  and then completely withdrawn in 2016.
+</p>
+
+<h2>HTTP/1.1</h2>
+<p>
+  While HTTP/1.1 has served us well since 1999,
+  it was designed for computers and the Web of that time.
+  Needless to say,
+  HTTP is long overdue for an update.
+  To help describe how HTTP/1 works,
+  I have put together the following diagram.
+  Follow the numbers and you will see it starts with the client
+  (possibly a web browser)
+  establishing an HTTP/1 connection to the server on the right.  
+</p>
+
+<p>
+  (2) Client/browser then sends a GET request
+  (HTTP method)
+  for the site's <code>index.html</code> page.<br>
+  (3) Represents the sever responding with the requested resource.<br>
+  (4-7) For our simple example,
+  this request-response cycle continues for the style sheets and scripts
+  in support of this HTML document.<br>
+  (8) Finally, the HTTP/1 connection is closed.
+</p>
+
+<figure>
+  <%= image_tag("insites/2015/03/http2/http1.png",
+        alt: "HTTP/1 request/response cycles") %>
+</figure>
+
+<h2>Head-of-Line Blocking</h2>
+<p>
+  As you can see,
+  the client/browser spends a great deal of time waiting on each resource.
+  Because HTTP/1 cannot make concurrent requests over a single connection,
+  browsers usually attempt to expedite the process
+  by opening multiple connections.
+</p>
+
+<h2>Expensive Connections</h2>
+<p>
+  While multiple connections help,
+  from a computer networking perspective,
+  each is very expensive to open.
+  Due to this expense,
+  modern browsers are limited to a maximum of 6-8 HTTP/1.1 connections.
+  With many websites now requiring 80 or more resources,
+  these limitations create a significant performance bottleneck.
+</p>
+
+<h2>HTTP Pipelining</h2>
+<p>
+  HTTP/1.1 attempted to correct this performance bottleneck
+  with a technique called HTTP Pipelining.
+  Unfortunately,
+  it still allowed a single large or slow response
+  to block all others that followed.
+  HTTP Pipelining can also be difficult to deploy
+  because many intermediaries and servers fail to process it correctly.
+</p>
+
+<h2>HTTP/2 Multiplexing</h2>
+<p>
+  Multiplexing allows multiple request-response messages to be in flight
+  over a single HTTP/2 connection,
+  at the same time.
+  To demonstrate how much more efficient
+  an HTTP/2 connection can be,
+  I prepared a side-by-side comparison to HTTP/1.
+  Even in this simplistic example with only three required resources,
+  note how much faster the web page can begin rendering.
+</p>
+
+<p>
+  Extrapolate this comparison
+  to a more common situation of 80 required resources
+  compounded by the expense of 6-8 HTTP/1.1 connections
+  and the efficiency of a single HTTP/2 connection becomes clear.
+</p>
+
+<figure>
+  <%= image_tag("insites/2015/03/http2/http1-vs-http2.png",
+        alt: "HTTP/1 compared to HTTP/2") %>
+</figure>
+
+<h2>Additional HTTP/2 Performance Factors</h2>
+<p>
+  In addition to multiplexing,
+  HTTP/2 is binary instead of textual like HTTP/1.
+  Compared to textual protocols,
+  binary protocols are more efficient to parse,
+  more compact “on the wire”
+  and less error-prone.
+</p>
+
+<p>
+  HTTP/2 headers are compressed,
+  which allows requests to get on the wire within one round trip.
+  This is a vast improvement over the 7-8 round trips
+  that HTTP/1 requires.
+</p>
+
+<h2>Server Push</h2>
+<p>
+  Server Push is where the server "pushes" resources directly to the client
+  without the client requesting such resources.
+  For example,
+  if a request is made for your home page,
+  the server could respond with both the home page and logo
+  because it knows the client will need both.
+  Pushing resources can be redundant 
+  if the client has already cached the resource.
+</p>
+
+<p>
+  At the time of this writing,
+  HTTP/2 Server Push is not ready for production use
+  in any web server
+  that I am aware of.
+</p>
+
+<h2>Server Hint</h2>
+<p>
+  Server Hint is a mechanism where
+  a server can notify clients of a resource
+  that will be needed,
+  before clients can discover it.
+  The server does not send the entire contents of the resource,
+  but only the URL.
+  Clients can then validate their cache
+  and if needed,
+  formally request the resource.  
+</p>
+
+<p>
+  Server Hint is implemented using the LINK header with HTTP
+  and overlaps with existing link prefetching semantics.
+  Within an HTML document,
+  the following would be included in the head tag:
+</p>
+
+<pre><code>&lt;link rel="prefetch" href="/images/big.jpg"&gt;
+</code></pre>
+
+<p>
+  To learn more about <code>rel="prefetch"</code>, see
+  <a target="_blank"
+  href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ">Link prefetching FAQ</a>
+  by Mozilla.
+</p>
+
+<h2>Going Further with Resource Hints</h2>
+
+<p>
+  The <code>preload</code> relationship is used to declare a resource
+  and its fetch properties.
+  This specification extends functionality with additional processing policies
+  that enable efficient fetching of resources
+  that might be required by the next navigation.
+  For example:
+</p>
+
+<pre><code>&lt;!-- fetch and preprocess for next navigation --&gt;
+&lt;link rel="preload" href="//example.com/next-page.html" as="html" loadpolicy="next"&gt;
+
+&lt;!-- fetch and do not preprocess for next navigation --&gt;
+&lt;link rel="preload" href="//example.com/next-component.html" as="html" loadpolicy="next inert"&gt;
+</code></pre>
+
+<p>
+  The <code>"next inert"</code> loadpolicy is equivalent to
+  <code>rel=prefetch</code>
+  implemented by some browsers.
+  The <code>"next"</code> loadpolicy is semantically equivalent to
+  <code>rel=prerender</code>
+  implemented by some browsers.
+  This specification standardizes and extends previous
+  <code>prefetch</code> and <code>prerender</code>
+  functionality with additional capabilities.
+</p>
+
+<p>
+  To learn more, see
+  <a target="_blank"
+  href="https://w3c.github.io/resource-hints/">Resource Hints</a>
+  edited by Ilya Grigorik and published by the W3C.
+</p>
+
+<h2>HTTP/2 Security Criticisms</h2>
+<p>
+  Although the primary objective of HTTP/2 is to make the Web faster,
+  it has been heavily criticized for not mandating encrypted connections.
+  However,
+  the leading browser makers have thus far
+  refused to implement HTTP/2 without encryption.
+  So by proxy,
+  HTTP/2 will require an encrypted connection to deploy.
+  Please see my article,
+  <a href="/insites/2015/01/https-everywhere.html">
+    HTTPS Everywhere
+  </a>
+  if you do not agree this is good for the future of the Web.
+</p>
+
+<h2>Browser Support</h2>
+<p>
+  HTTP/2 is or will be supported by all major browsers.
+</p>
+
+<ul>
+  <li>
+    <strong>Chrome</strong> supports HTTP/2,
+    but it is not enabled by default.
+    To turn on HTTP/2 support,
+    a command line flag
+    <code>--enable-spdy4</code>
+    needs to be specified when launching Chrome.
+    Currently, only HTTP/2 over TLS (encrypted) is implemented.
+    As of February 2015, Google plans to fully implement HTTP/2 in future versions of its Chrome browser.
+  </li>
+  <li>
+    <strong>Firefox</strong> supports HTTP/2,
+    which has been enabled by default since version 36.
+    Experimental support for HTTP/2 was originally added in version 34.
+    Currently, only HTTP/2 over TLS is implemented.
+  </li>
+  <li>
+    <strong>Internet Explorer 11</strong> supports HTTP/2
+    but only in Windows 10 beta,
+    where it is enabled by default.
+    Currently, only HTTP/2 over TLS is implemented.
+  </li>
+  <li>
+    <strong>Safari</strong> supports SPDY by default in
+    Mac OS X Yosemite (10.10) and iOS 8.
+    Default HTTP/2 support is expected by the end of 2015.
+  </li>
+  <li>
+    <strong>Opera</strong> supports SPDY by default.
+    Default HTTP/2 support is expected once it becomes available in Chrome.
+  </li>
+</ul>
+
+<h2>Server Support</h2>
+
+<h3>HTTP/2 Support</h3>
+<ul>
+  <li>
+    <strong>IIS</strong> (Internet Information Services)
+    supports HTTP/2 in Windows 10 beta.
+  </li>
+  <li>
+    <strong>OpenLiteSpeed</strong> 1.3.8 and 1.4.5
+    support HTTP/2 draft 17.
+  </li>
+</ul>
+
+<h3>SPDY, but no HTTP/2</h3>
+<ul>
+  <li>
+    <strong>Apache</strong> provided support for old versions of SPDY
+    via the mod_spdy module
+    but development of this module has stopped.
+  </li>
+  <li>
+    <strong>LiteSpeed Web Server</strong> currently supports SPDY/3.1.
+  </li>
+  <li>
+    <strong>Nginx</strong> provides experimental support for SPDY (Draft 3.1) via a module
+    and plans to support HTTP/2 by the end of 2015.
+  </li>
+</ul>
+
+<h3>HTTP/2 Not Planned</h3>
+<ul>
+  <li>
+    <strong>lighttpd</strong> has no support for SPDY or HTTP/2 planned in version 1.x.
+  </li>
+</ul>
+
+<h3>Other HTTP/2 Implementations</h3>
+<p>
+  Other known implementations of HTTP/2 can be found on the
+  <a target="_blank"
+  href="https://github.com/http2/http2-spec/wiki/Implementations">
+     GitHub HTTP/2 wiki</a>.
+</p>
+
+<h2>Closing HTTP/2 Thoughts</h2>
+<p>
+  As we have explored,
+  HTTP/2 is a long overdue update for the Web.
+  As it becomes widely adopted over the next few years,
+  websites and other web services
+  will become faster and more capable than ever before.
+  Thanks to forward-thinking browser makers,
+  HTTP/2 will also enhance user privacy and security.
+  While there is more that could be done,
+  I feel that HTTP/2 is a significant step forward
+  for the entire Web.
+</p>
+
+<p>
+  If you have any questions or comments about HTTP/2,
+  I can be reached on Twitter
+  <a target="_blank"
+  href="https://twitter.com/BenjaminPatch">
+  @BenjaminPatch</a>.
+</p>
