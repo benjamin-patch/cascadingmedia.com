@@ -262,10 +262,14 @@ description: HTTP/2 is a long overdue update for the Web. As it becomes widely a
 
 <ul>
   <li>
-    <strong>Chrome</strong> 40 enabled HTTP/2 draft-14 support.
-    HTTP/2 draft-17 (final) is now enabled by default in Chrome Canary
-    (developer pre-release).
-    Currently, only HTTP/2 over TLS (encrypted) is implemented.
+    <strong>Chrome</strong> 40 supports HTTP/2 draft-14,
+    but it is not enabled by default. 
+    HTTP/2 draft-17 (final) is available in Chrome Canary 43
+    (developer pre-release version).
+    Currently, only HTTP/2 over TLS (encrypted) is implemented.<br>
+    To enable HTTP/2 in Chrome,
+    navigate to:
+    <pre><code>chrome://flags/#enable-spdy4</code></pre>
   </li>
   <li>
     <strong>Firefox</strong> supports HTTP/2,
@@ -282,11 +286,13 @@ description: HTTP/2 is a long overdue update for the Web. As it becomes widely a
   <li>
     <strong>Safari</strong> supports SPDY by default in
     Mac OS X Yosemite (10.10) and iOS 8.
-    Default HTTP/2 support is expected by the end of 2015.
+    Full HTTP/2 support is expected by the end of 2015.
   </li>
   <li>
     <strong>Opera</strong> supports SPDY by default.
-    Default HTTP/2 support is expected once it becomes available in Chrome.
+    Full HTTP/2 support is expected
+    once the final HTTP/2 draft
+    becomes available in Chrome by default.
   </li>
 </ul>
 
