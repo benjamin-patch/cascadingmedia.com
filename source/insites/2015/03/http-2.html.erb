@@ -172,13 +172,23 @@ description: HTTP/2 is a long overdue update for the Web. As it becomes widely a
 </p>
 
 <p>
-  Server Hint is implemented using the LINK header with HTTP
+  Server Hint is implemented using the Link header with HTTP
   and overlaps with existing link prefetching semantics.
-  Within an HTML document,
-  the following would be included in the head tag:
+  For example,
+  an HTTP Link header looks like this:
 </p>
 
-<pre><code>&lt;link rel="prefetch" href="/images/big.jpg"&gt;
+<pre><code>Link: &lt;https://example.com/images/large-background.jpg&gt;; rel=prefetch
+</code></pre>
+
+<p>
+  No server-side implementation is required
+  if the HTML document includes a <code>prefetch</code> link
+  in the head tag.
+  For example:
+</p>
+
+<pre><code>&lt;link rel="prefetch" href="https://example.com/images/large-background.jpg"&gt;
 </code></pre>
 
 <p>
