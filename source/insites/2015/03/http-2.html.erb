@@ -141,38 +141,42 @@ description: HTTP/2 is a long overdue update for the Web. As it becomes widely a
 
 <h2>Server Push</h2>
 <p>
-  Server Push is where the server "pushes" resources directly to the client
-  without the client requesting such resources.
+  Server Push is an HTTP/2 mechanism
+  for sending data before clients request it.
   For example,
   if a request is made for your home page,
-  the server could respond with both the home page and logo
-  because it knows the client will need both.
-  Pushing resources can be redundant 
-  if the client has already cached the resource.
+  the server could respond with the home page
+  plus logo and style sheets
+  because it knows the client will need them all.
+  This is essentially the same as inlining all resources
+  within an HTML document,
+  except pushed resources would be cacheable.
 </p>
 
 <p>
-  At the time of this writing,
-  HTTP/2 Server Push is not ready for production use
-  in any web server
-  that I am aware of.
+  A drawback of server push is possible redundancy
+  in cases where the client has already cached the resource(s).
+  This is why I recommend using Server Hints instead.
 </p>
 
-<h2>Server Hint</h2>
+<h2>Server Hints</h2>
 <p>
-  Server Hint is a mechanism where
-  a server can notify clients of a resource
+  Server Hints notify clients of resources
   that will be needed,
-  before clients can discover it.
+  before clients can discover such resources.
   The server does not send the entire contents of the resource,
   but only the URL.
   Clients can then validate their cache
   and if needed,
-  formally request the resource.  
+  formally request the resource.
+  Server Hints are not new to HTTP/2
+  but worth mentioning here
+  because they do not suffer from the possible redundancy drawback
+  of Server Push, as described above.
 </p>
 
 <p>
-  Server Hint is implemented using the Link header with HTTP
+  Server Hints are implemented using the Link header with HTTP
   and overlaps with existing link prefetching semantics.
   For example,
   an HTTP Link header looks like this:
