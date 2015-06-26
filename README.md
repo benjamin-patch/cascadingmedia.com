@@ -1,9 +1,10 @@
 # Cascading Media
-  - Release: 6.3.3
-  - Date: 10 February 2015
+  - Release: 6.3.4
+  - Date: 26 June 2015
   - Name: r6ix
 
 ## Release Dates
+  - **6.3.4** => 26 June 2015
   - **6.3.3** => 10 February 2015
   - **6.3.2** => 22 January 2015
   - **6.3.1** => 12 January 2015
@@ -16,6 +17,9 @@
   - **6.0.0** => 20 August 2014
 
 ## Release Notes
+
+### 6.3.4
+  - Update webfolio.
 
 ### 6.3.3
   - Write 'URL Anatomy with SEO Tips'.

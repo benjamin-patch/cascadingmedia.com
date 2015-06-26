@@ -116,9 +116,6 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  # Minify HTML on build
-  activate :minify_html, remove_input_attributes: false
-
   # Enable gzip
   activate :gzip
 
@@ -130,6 +127,25 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+  activate :minify_html do |html|
+    html.remove_multi_spaces        = true   # Remove multiple spaces
+    html.remove_comments            = true   # Remove comments
+    html.remove_intertag_spaces     = false  # Remove inter-tag spaces
+    html.remove_quotes              = true   # Remove quotes
+    html.simple_doctype             = false  # Use simple doctype
+    html.remove_script_attributes   = true   # Remove script attributes
+    html.remove_style_attributes    = true   # Remove style attributes
+    html.remove_link_attributes     = true   # Remove link attributes
+    html.remove_form_attributes     = false  # Remove form attributes
+    html.remove_input_attributes    = false  # Remove input attributes
+    html.remove_javascript_protocol = true   # Remove JS protocol
+    html.remove_http_protocol       = false  # Remove HTTP protocol
+    html.remove_https_protocol      = false  # Remove HTTPS protocol
+    html.preserve_line_breaks       = false  # Preserve line breaks
+    html.simple_boolean_attributes  = true   # Use simple boolean attributes
+    # html.preserve_patterns          = nil    # Patterns to preserve
+  end
 end
 
 activate :blog do |blog|
@@ -155,4 +171,15 @@ activate :blog do |blog|
   # blog.paginate = true
   # blog.per_page = 10
   # blog.page_link = "page/{num}"
+end
+
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host   = '45.55.82.64'
+  deploy.path   = '/var/www/cascadingmedia.com/public'
+  # Optional Settings
+  deploy.user  = 'alpha' # no default
+  deploy.port  = 1776 # ssh port, default: 22
+  deploy.clean = true # remove orphaned files on remote host, default: false
+  # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
 end
