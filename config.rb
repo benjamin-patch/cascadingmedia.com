@@ -156,3 +156,14 @@ activate :blog do |blog|
   # blog.per_page = 10
   # blog.page_link = "page/{num}"
 end
+
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host   = '45.55.82.64'
+  deploy.path   = '/var/www/cascadingmedia.com/public'
+  # Optional Settings
+  deploy.user  = 'alpha' # no default
+  deploy.port  = 1776 # ssh port, default: 22
+  deploy.clean = true # remove orphaned files on remote host, default: false
+  # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
+end
