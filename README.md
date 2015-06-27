@@ -1,9 +1,10 @@
 # Cascading Media
-  - Release: 6.3.4
-  - Date: 26 June 2015
+  - Release: 6.3.5
+  - Date: 27 June 2015
   - Name: r6ix
 
 ## Release Dates
+  - **6.3.5** => 27 June 2015
   - **6.3.4** => 26 June 2015
   - **6.3.3** => 10 February 2015
   - **6.3.2** => 22 January 2015
@@ -17,6 +18,10 @@
   - **6.0.0** => 20 August 2014
 
 ## Release Notes
+
+### 6.3.5
+  - Remove contact form because new client applications are no longer accepted.
+  - Remove current rate table.
 
 ### 6.3.4
   - Update webfolio.
