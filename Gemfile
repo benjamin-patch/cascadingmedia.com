@@ -17,7 +17,7 @@ gem 'middleman-minify-html', '~> 3.4'
 
 gem 'middleman-blog'
 
-gem 'nokogiri', '~> 1.6.5'
+gem 'nokogiri', '~> 1.13.9'
 
 gem 'middleman-search_engine_sitemap', '~> 1.3.0'
 
